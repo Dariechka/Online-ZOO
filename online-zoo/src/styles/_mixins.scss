@@ -44,6 +44,12 @@
   align-items: center;
 }
 
+@mixin center-between() {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @mixin img() {
   height: 100%;
   width: 100%;
@@ -51,86 +57,8 @@
 }
 
 @mixin respond($breakpoint) {
-  @if ($breakpoint==xxx2-tablet) {
-    @media only screen and (max-width: 1420px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==xxx-tablet) {
-    @media only screen and (max-width: 1300px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==xx2-tablet) {
-    @media only screen and (max-width: 1240px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==xx-tablet) {
+  @if ($breakpoint==large) {
     @media only screen and (max-width: 1200px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==x4-tablet) {
-    @media only screen and (max-width: 1089px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==x3-tablet) {
-    @media only screen and (max-width: 1050px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==x-tablet) {
-    @media only screen and (max-width: 1000px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==x2-tablet) {
-    @media only screen and (max-width: 900px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==x5-tablet) {
-    @media only screen and (max-width: 850px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==tablet) {
-    @media only screen and (max-width: 768px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==xxx-mobile) {
-    @media only screen and (max-width: 700px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==xx-mobile) {
-    @media only screen and (max-width: 680px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==x-mobile) {
-    @media only screen and (max-width: 470px) {
-      @content;
-    }
-  }
-
-  @if ($breakpoint==mobile) {
-    @media only screen and (max-width: 380px) {
       @content;
     }
   }

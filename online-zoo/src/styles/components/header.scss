@@ -1,0 +1,52 @@
+@use './../_variables' as vars;
+@use './../_mixins' as mix;
+
+.header {
+  &__container {
+    height: 110px;
+    width: 100%;
+    background-color: vars.$orange;
+    @include mix.center-between();
+  }
+
+  &__title {
+    width: 96px;
+    height: 50px;
+    margin: 0;
+  }
+
+  &__hidden {
+    visibility: hidden;
+  }
+
+  &__right-block {
+    @include mix.center(67px);
+  }
+
+  &__navigation {
+    @include mix.center(48.25px);
+    scroll-behavior: smooth;
+    cursor: pointer;
+    &_item {
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: 0.4s ease-out;
+      cursor: pointer;
+      @include mix.text('Montserrat', normal, vars.$black, 18px, 150%, 600, 0);
+      &_active {
+        color: vars.$turquoise;
+      }
+    }
+    &_item:hover {
+      color: vars.$turquoise;
+    }
+  }
+
+  &__social {
+    @include mix.center(30px);
+    &_item img {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}

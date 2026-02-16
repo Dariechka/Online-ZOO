@@ -1,4 +1,7 @@
 @use './../../node_modules/modern-normalize/modern-normalize.css';
+@use './fonts/fonts';
+@use './components/container';
+@use './components/header';
 
 *,
 ::before,

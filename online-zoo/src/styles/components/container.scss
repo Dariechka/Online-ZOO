@@ -1,0 +1,12 @@
+@use './../_variables' as vars;
+@use './../_mixins' as mix;
+
+.container {
+  max-width: vars.$max-container-width;
+  padding: 0 16.25rem;
+  overflow: hidden;
+  margin: 0 auto;
+  @include mix.respond(large) {
+    padding: 0 100px;
+  }
+}
