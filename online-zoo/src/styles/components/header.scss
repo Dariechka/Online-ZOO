@@ -23,7 +23,7 @@
   }
 
   &__right-block {
-    @include mix.center(67px);
+    @include mix.center(73px);
     scroll-behavior: smooth;
     @include mix.respond(large-1500) {
       gap: 80px;
@@ -68,11 +68,11 @@
   }
 
   &__navigation {
-    @include mix.center(48.25px);
+    @include mix.center(48px);
     scroll-behavior: smooth;
     cursor: pointer;
     @include mix.respond(large-1500) {
-      @include mix.center(30px);
+      @include mix.center(32px);
     }
     @include mix.respond(large-1080) {
       @include mix.center(20px);
@@ -90,7 +90,7 @@
       text-transform: uppercase;
       transition: 0.4s ease-out;
       cursor: pointer;
-      @include mix.text('Montserrat', normal, vars.$black, 18px, 150%, 600, 0);
+      @include mix.mainText();
       @include mix.respond(medium-850) {
         color: vars.$white;
       }
@@ -114,6 +114,9 @@
 
   &__social {
     @include mix.center(30px);
+    @include mix.respond(large-1500) {
+      margin-top: 3px;
+    }
     @include mix.respond(large-1080) {
       @include mix.center(20px);
     }
