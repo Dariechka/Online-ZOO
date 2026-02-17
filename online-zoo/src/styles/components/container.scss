@@ -6,7 +6,16 @@
   padding: 0 16.25rem;
   overflow: hidden;
   margin: 0 auto;
-  @include mix.respond(large) {
+  @include mix.respond(large-1500) {
     padding: 0 100px;
+  }
+  @include mix.respond(large-1080) {
+    padding: 0 50px;
+  }
+  @include mix.respond(medium-850) {
+    padding: 0 20px;
+  }
+  @include mix.respond(small-430) {
+    padding: 0 10px;
   }
 }

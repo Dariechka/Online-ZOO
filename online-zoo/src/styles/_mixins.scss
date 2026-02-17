@@ -57,8 +57,26 @@
 }
 
 @mixin respond($breakpoint) {
-  @if ($breakpoint==large) {
-    @media only screen and (max-width: 1200px) {
+  @if ($breakpoint==large-1500) {
+    @media only screen and (min-width: 1081px) and (max-width: 1500px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==large-1080) {
+    @media only screen and (min-width: 851px) and (max-width: 1080px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==medium-850) {
+    @media only screen and (min-width: 431px) and (max-width: 850px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==small-430) {
+    @media only screen and (max-width: 430px) {
       @content;
     }
   }
