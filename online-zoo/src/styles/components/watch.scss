@@ -3,7 +3,13 @@
 
 .watch {
   &__container {
-    background: linear-gradient(106.13deg, #FFFFFF 18.05%, rgba(255,255,255,0.64684) 35.48%, rgba(255,255,255,0) 45.95%), linear-gradient(267.79deg, #FFFFFF 2.85%, rgba(255,255,255,0) 6.99%), linear-gradient(180.96deg, #FFFFFF 0.2%, rgba(255,255,255,0) 5.62%), linear-gradient(219.86deg, #FFFFFF 0.49%, rgba(255,255,255,0) 6.78%), linear-gradient(141.69deg, #FFFFFF 13.5%, rgba(247,247,247,0) 22.24%), url('/public/images/watch.png') -49px 23% / cover no-repeat;
+    background:
+      linear-gradient(106.13deg, #ffffff 18.05%, rgba(255, 255, 255, 0.64684) 35.48%, rgba(255, 255, 255, 0) 45.95%),
+      linear-gradient(267.79deg, #ffffff 2.85%, rgba(255, 255, 255, 0) 6.99%),
+      linear-gradient(180.96deg, #ffffff 0.2%, rgba(255, 255, 255, 0) 5.62%),
+      linear-gradient(219.86deg, #ffffff 0.49%, rgba(255, 255, 255, 0) 6.78%),
+      linear-gradient(141.69deg, #ffffff 13.5%, rgba(247, 247, 247, 0) 22.24%),
+      url('/public/images/watch.png') -49px 23% / cover no-repeat;
     width: 100%;
     padding: 131px 0 131px 260px;
     display: flex;
@@ -14,20 +20,39 @@
       padding: 100px 0 100px 40px;
       gap: 15px;
       margin-bottom: 100px;
-      background: linear-gradient(106.13deg, #FFFFFF 18.05%, rgba(255, 255, 255, 0.64684) 35.48%, rgba(255, 255, 255, 0) 45.95%), linear-gradient(180.96deg, #FFFFFF 0.2%, rgba(255, 255, 255, 0) 5.62%), linear-gradient(219.86deg, #FFFFFF 0.49%, rgba(255, 255, 255, 0) 6.78%), linear-gradient(141.69deg, #FFFFFF 13.5%, rgba(247, 247, 247, 0) 22.24%), url('/public/images/watch.png') -88px 42% / 118% auto no-repeat;
+      background:
+        linear-gradient(106.13deg, #ffffff 18.05%, rgba(255, 255, 255, 0.64684) 35.48%, rgba(255, 255, 255, 0) 45.95%),
+        linear-gradient(180.96deg, #ffffff 0.2%, rgba(255, 255, 255, 0) 5.62%),
+        linear-gradient(219.86deg, #ffffff 0.49%, rgba(255, 255, 255, 0) 6.78%),
+        linear-gradient(141.69deg, #ffffff 13.5%, rgba(247, 247, 247, 0) 22.24%),
+        url('/public/images/watch.png') -88px 42% / 118% auto no-repeat;
     }
     @include mix.respond(large-1080) {
       padding: 50px 20px;
       gap: 15px;
-      background: linear-gradient(106.13deg, #FFFFFF 18.05%, rgba(255, 255, 255, 0.64684) 35.48%, rgba(255, 255, 255, 0) 45.95%), linear-gradient(180.96deg, #FFFFFF 0.2%, rgba(255, 255, 255, 0) 5.62%), linear-gradient(219.86deg, #FFFFFF 0.49%, rgba(255, 255, 255, 0) 6.78%), linear-gradient(141.69deg, #FFFFFF 13.5%, rgba(247, 247, 247, 0) 22.24%), url('/public/images/watch.png') -88px 42% / 118% auto no-repeat;
+      background:
+        linear-gradient(106.13deg, #ffffff 18.05%, rgba(255, 255, 255, 0.64684) 35.48%, rgba(255, 255, 255, 0) 45.95%),
+        linear-gradient(180.96deg, #ffffff 0.2%, rgba(255, 255, 255, 0) 5.62%),
+        linear-gradient(219.86deg, #ffffff 0.49%, rgba(255, 255, 255, 0) 6.78%),
+        linear-gradient(141.69deg, #ffffff 13.5%, rgba(247, 247, 247, 0) 22.24%),
+        url('/public/images/watch.png') -88px 42% / 118% auto no-repeat;
     }
     @include mix.respond(medium-850) {
-      background: linear-gradient(90.7deg, #FFFFFF 23.04%, rgba(255, 255, 255, 0) 62.81%), linear-gradient(180.96deg, #FFFFFF 0.2%, rgba(255, 255, 255, 0) 5.62%), linear-gradient(219.86deg, #FFFFFF 0.49%, rgba(255, 255, 255, 0) 6.78%), linear-gradient(141.69deg, #FFFFFF 13.5%, rgba(247, 247, 247, 0) 22.24%), url('/public/images/watch.png') -60px 253px / 120% auto no-repeat;
+      background:
+        linear-gradient(90.7deg, #ffffff 23.04%, rgba(255, 255, 255, 0) 62.81%),
+        linear-gradient(180.96deg, #ffffff 0.2%, rgba(255, 255, 255, 0) 5.62%),
+        linear-gradient(219.86deg, #ffffff 0.49%, rgba(255, 255, 255, 0) 6.78%),
+        linear-gradient(141.69deg, #ffffff 13.5%, rgba(247, 247, 247, 0) 22.24%),
+        url('/public/images/watch.png') -60px 253px / 120% auto no-repeat;
       padding: 52px 20px 50px;
       gap: 16px;
     }
     @include mix.respond(small-585) {
-      background: linear-gradient(180.96deg, #FFFFFF 0.2%, rgba(255, 255, 255, 0) 5.62%), linear-gradient(219.86deg, #FFFFFF 0.49%, rgba(255, 255, 255, 0) 6.78%), linear-gradient(141.69deg, #FFFFFF 13.5%, rgba(247, 247, 247, 0) 22.24%), url('/public/images/watch.png') -147px bottom / 157% auto no-repeat;
+      background:
+        linear-gradient(180.96deg, #ffffff 0.2%, rgba(255, 255, 255, 0) 5.62%),
+        linear-gradient(219.86deg, #ffffff 0.49%, rgba(255, 255, 255, 0) 6.78%),
+        linear-gradient(141.69deg, #ffffff 13.5%, rgba(247, 247, 247, 0) 22.24%),
+        url('/public/images/watch.png') -147px bottom / 157% auto no-repeat;
       padding: 22px 10px 279px;
       gap: 17px;
     }
@@ -72,7 +97,6 @@
     margin-top: 10px;
     @include mix.button(240px, vars.$orange, 10px);
     &_text {
-      text-transform: uppercase;
       @include mix.buttonText(vars.$white);
     }
     @include mix.respond(medium-850) {
