@@ -1,13 +1,6 @@
 @use './variables' as vars;
 @use './fonts/fonts';
 
-@mixin background($url) {
-  background-image: url($url);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
 @mixin text($ff: false, $fst: false, $color: false, $fs: false, $lh: false, $fw: false, $ls: false) {
   @if ($ff) {
     font-family: $ff;
@@ -39,6 +32,18 @@
   margin: 0;
 }
 
+@mixin title($size) {
+  font-family: 'Montserrat', sans-serif;
+  font-style: normal;
+  color: vars.$turquoise;
+  font-size: $size;
+  line-height: 120%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
 @mixin mainText() {
   font-family: 'Montserrat', sans-serif;
   font-style: normal;
@@ -47,11 +52,12 @@
   line-height: 150%;
   font-weight: 400;
   letter-spacing: 0;
+  margin: 0;
 }
 
 @mixin button($width, $color, $gap, $border-color: false) {
   width: $width;
-  border-radius: 5px;
+  border-radius: vars.$border-radius;
   height: 74px;
   background-color: $color;
   display: flex;
@@ -59,6 +65,7 @@
   justify-content: center;
   gap: $gap;
   border: none;
+  cursor: pointer;
   @if ($border-color) {
     border: 1px solid $border-color;
   }
@@ -94,6 +101,12 @@
 }
 
 @mixin respond($breakpoint) {
+  @if ($breakpoint==large-1800) {
+    @media only screen and (max-width: 1800px) {
+      @content;
+    }
+  }
+
   @if ($breakpoint==large-1500) {
     @media only screen and (min-width: 1081px) and (max-width: 1500px) {
       @content;
@@ -102,6 +115,12 @@
 
   @if ($breakpoint==large-1080) {
     @media only screen and (min-width: 851px) and (max-width: 1080px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==large-1030) {
+    @media only screen and (max-width: 1030px) {
       @content;
     }
   }
