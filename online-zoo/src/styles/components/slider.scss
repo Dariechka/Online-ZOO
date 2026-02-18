@@ -1,0 +1,24 @@
+@use './../_variables' as vars;
+@use './../_mixins' as mix;
+
+.slider {
+  &__buttons {
+    display: flex;
+    gap: 55px;
+  }
+
+  &__button {
+    width: 60px;
+    height: 60px;
+    @include mix.center(0);
+    justify-content: center;
+    background-color: transparent;
+    border-radius: vars.$border-radius;
+    border: 1px solid vars.$purple;
+    cursor: pointer;
+    &__svg {
+      color: vars.$purple;
+    }
+  }
+
+}

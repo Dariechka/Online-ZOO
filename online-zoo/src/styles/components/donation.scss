@@ -93,6 +93,7 @@
       @include mix.button(320px, transparent, 15px, vars.$white);
       padding: 0;
       justify-content: flex-end;
+      transition: all 0.5s linear;
       @include mix.respond(large-1030) {
         width: 363px;
         gap: 40px;
@@ -113,6 +114,9 @@
           margin-bottom: 2px;
         }
       }
+      &__svg {
+        color: vars.$white;
+      }
       &__btn {
         width: 79px;
         height: 73px;
@@ -127,6 +131,10 @@
           width: 59px;
           height: 43px;
         }
+      }
+
+      &:hover .donation__donate__button__btn {
+        background-color: vars.$dark-orange;
       }
     }
   }
