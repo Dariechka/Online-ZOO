@@ -7,7 +7,7 @@
     @include mix.center(192px);
     height: 221px;
     @include mix.respond(large-1800) {
-      padding: 45px 97px;
+      padding: 45px 100px 45px 97px;
       height: 313px;
       gap: 106px;
       align-items: flex-start;
@@ -82,6 +82,12 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @include mix.respond(large-1800) {
+      padding-top: 7px;
+    }
+    @include mix.respond(medium-960) {
+      padding-top: 0;
+    }
 
     &__title {
       @include mix.text('Montserrat', 'normal', vars.$white, 26px, 130%, 500, 0);

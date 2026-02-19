@@ -2,9 +2,23 @@
 @use './../_mixins' as mix;
 
 .slider {
+  padding-right: 0;
+  padding-left: 260px;
+  max-width: 100%;
+  overflow: hidden;
   &__buttons {
     display: flex;
     gap: 55px;
+    margin-top: 50px;
+    @include mix.respond(large-1500) {
+      margin-top: 70px;
+    }
+    @include mix.respond(large-1080) {
+      margin-top: 70px;
+    }
+    @include mix.respond(medium-960) {
+      display: none;
+    }
   }
 
   &__button {
@@ -33,6 +47,40 @@
     &:disabled:hover .slider__button__svg {
       color: vars.$purple;
     }
+  }
+
+  &__ribbon {
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, auto);
+    gap: 40px;
+    width: max-content;
+    transition: transform 0.5s ease-out;
+    @include mix.respond(large-1500) {
+      gap: 20px;
+    }
+    @include mix.respond(large-1080) {
+      gap: 20px;
+    }
+    @include mix.respond(medium-960) {
+      grid-template-rows: auto;
+      gap: 20px;
+    }
+  }
+
+  @include mix.respond(large-1500) {
+    padding-left: 40px;
+  }
+  @include mix.respond(large-1080) {
+    padding-left: 40px;
+  }
+  @include mix.respond(medium-960) {
+    padding: 18px 20px 0;
+  }
+  @include mix.respond(small-430) {
+    padding: 0 10px 0;
+    margin-top: -8px;
   }
 
 }

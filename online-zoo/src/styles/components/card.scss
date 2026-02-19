@@ -2,5 +2,112 @@
 @use './../_mixins' as mix;
 
 .card {
-
+  position: relative;
+  background-color: vars.$purple;
+  border: 1px solid vars.$purple;
+  width: 441px;
+  height: 749px;
+  border-radius: vars.$border-radius;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+  @include mix.respond(large-1500) {
+    width: 455px;
+    height: 716px;
+  }
+  @include mix.respond(medium-960) {
+    width: 290px;
+    height: 600px;
+  }
+  @include mix.respond(small-430) {
+    width: 300px;
+    height: 601px;
+  }
+  &:hover {
+    transform: translateY(-10px);
+  }
+  &__image {
+    width: 100%;
+    height: 436px;
+    border-top-left-radius: vars.$border-radius;
+    border-top-right-radius: vars.$border-radius;
+    @include mix.respond(medium-960) {
+      height: 333px;
+    }
+    &__img {
+      @include mix.img();
+      border-top-left-radius: vars.$border-radius;
+      border-top-right-radius: vars.$border-radius;
+    }
+  }
+  &__text-block {
+    @include mix.center(18px);
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 30px 0;
+    @include mix.respond(large-1500) {
+      padding-top: 15px;
+      gap: 15px;
+    }
+    @include mix.respond(medium-960) {
+      padding-top: 15px;
+      gap: 15px;
+      padding-bottom: 10px;
+    }
+    @include mix.respond(small-430) {
+      padding-bottom: 5px;
+      gap: 10px;
+    }
+  }
+  &__title {
+    @include mix.text('Montserrat', 'normal', vars.$white, 26px, 130%, 500, 0);
+    margin-right: 4px;
+  }
+  &__text {
+    @include mix.mainText();
+    color: vars.$white;
+    text-align: center;
+  }
+  &__button {
+    margin-top: 8px;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+    @include mix.button(240px, transparent, 10px, vars.$purple);
+    @include mix.respond(large-1500) {
+      margin-top: 40px;
+      gap: 12px;
+    }
+    @include mix.respond(medium-960) {
+      margin-top: 0;
+      gap: 12px;
+    }
+    @include mix.respond(small-430) {
+      margin-top: 5px;
+    }
+    &__text {
+      @include mix.buttonText(vars.$orange);
+      letter-spacing: 1.5px;
+    }
+    &__svg {
+      color: vars.$orange;
+    }
+    &:hover {
+      border-color: vars.$orange;
+      background-color: vars.$orange;
+    }
+    &:hover .card__button__text {
+       color: vars.$white;
+    }
+    &:hover .card__button__svg {
+      color: vars.$white;
+    }
+  }
+  &__name {
+    background-color: vars.$purple;
+    padding: 12px 20px;
+    position: absolute;
+    @include mix.text('Montserrat', 'normal', vars.$white, 26px, 130%, 500, 0);
+    border-top-left-radius: vars.$border-radius;
+  }
 }
