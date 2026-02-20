@@ -1,16 +1,21 @@
-const ribbon = document.querySelector('.slider__ribbon');
-const leftButton = document.querySelector('.slider__button_left');
-const rightButton = document.querySelector('.slider__button_right');
+const ribbon = document.querySelector('.slider__ribbon')
+const slider = document.querySelector('.slider')
+const leftButton = document.querySelector('.slider__button_left')
+const rightButton = document.querySelector('.slider__button_right')
+
+leftButton.setAttribute('disabled', 'disabled')
 
 async function fetchAnimals() {
-    const response = await fetch('./animals.json');
-    return await response.json();
+  const response = await fetch('./animals.json')
+  return await response.json()
 }
 
-(async () => {
-    const allAnimals = await fetchAnimals();
+;(async () => {
+  const allAnimals = await fetchAnimals()
 
-    const cardsHtml =allAnimals.map(animal =>
+  const cardsHtml = allAnimals
+    .map(
+      (animal) =>
         `<div class="card">
                 <div class="card__image">
                   <img class="card__image__img" src="/images/${animal.animal}.png" alt="Animal" />
@@ -27,33 +32,90 @@ async function fetchAnimals() {
                 </div>
                 <div class="card__name">${animal.name}</div>
               </div>`
-    ).join('');
-    ribbon.insertAdjacentHTML("beforeend", cardsHtml);
+    )
+    .join('')
+  ribbon.insertAdjacentHTML('beforeend', cardsHtml)
 
-    const styles = getComputedStyle(ribbon);
-    const ribbonPaddingLeft = styles.paddingLeft;
-    const card = document.querySelector('.card');
+  const card = document.querySelector('.card')
+  let paddingLeft = parseFloat(getComputedStyle(slider).paddingLeft)
 
+  function calculateCardWidth() {
+    return card.getBoundingClientRect().width
+  }
 
-    function calculateCardWidth() {
-        return card.getBoundingClientRect().width;
+  function calculateRibbonLength() {
+    const calculateFunction = (rows, gap) =>
+      paddingLeft + (allAnimals.length / rows) * calculateCardWidth() + (allAnimals.length / rows - 1) * gap
+    if (window.innerWidth > 1500) {
+      return calculateFunction(2, 40)
+    } else if (window.innerWidth > 960 && window.innerWidth <= 1500) {
+      return calculateFunction(2, 20)
+    } else if (window.innerWidth > 430 && window.innerWidth <= 960) {
+      return calculateFunction(1, 20)
+    } else {
+      return calculateFunction(1, 10)
+    }
+  }
+
+  function calcDelta() {
+    return calculateRibbonLength() / 6
+  }
+
+  let startX = 0
+  let currentX = 0
+  let shift = 0
+
+  window.addEventListener('resize', () => {
+    ribbon.style.transform = `translateX(0px)`
+    leftButton.setAttribute('disabled', 'disabled')
+    rightButton.removeAttribute('disabled')
+    shift = 0
+    startX = 0
+    currentX = 0
+  })
+
+  rightButton.addEventListener('click', () => {
+    shift -= calcDelta()
+    leftButton.removeAttribute('disabled')
+    ribbon.style.transform = `translateX(${shift}px)`
+    if (calculateRibbonLength() + shift - window.innerWidth <= 80) {
+      rightButton.setAttribute('disabled', 'disabled')
+    }
+  })
+
+  leftButton.addEventListener('click', () => {
+    rightButton.removeAttribute('disabled')
+    shift += calcDelta()
+    ribbon.style.transform = `translateX(${shift}px)`
+    if (shift >= 0) {
+      leftButton.setAttribute('disabled', 'disabled')
+    }
+  })
+
+  ribbon.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX
+  })
+
+  ribbon.addEventListener('touchmove', (e) => {
+    currentX = e.touches[0].clientX
+    const delta = currentX - startX
+    let newShift = shift + delta
+    const ribbonWidth = calculateRibbonLength()
+    const maxRight = ribbonWidth - window.innerWidth
+
+    if (Math.abs(newShift) > maxRight - 80) {
+      newShift = -(maxRight - 80)
     }
 
-    function calculateRibbonLength() {
-        if (window.innerWidth > 768) {
-
-        } else {
-
-        }
+    if (newShift > 0) {
+      newShift = 0
     }
 
+    ribbon.style.transform = `translateX(${newShift}px)`
+  })
 
-
-
-
-
-
-
-
+  ribbon.addEventListener('touchend', (e) => {
+    const delta = e.changedTouches[0].clientX - startX
+    shift += delta
+  })
 })()
-
