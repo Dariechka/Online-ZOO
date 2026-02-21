@@ -42,26 +42,30 @@
     }
   }
   &__text-block {
-    @include mix.center(18px);
+    height: 311px;
+    @include mix.center(0);
     flex-direction: column;
-    justify-content: center;
-    padding: 30px 30px 0;
+    justify-content: space-between;
+    padding: 30px 30px 50px;
+    &__top {
+      @include mix.center(18px);
+      flex-direction: column;
+    }
     @include mix.respond(large-1500) {
+      height: 280px;
       padding-top: 15px;
-      gap: 15px;
+      padding-bottom: 35px;
     }
     @include mix.respond(medium-960) {
       padding-top: 15px;
-      gap: 15px;
       padding-bottom: 10px;
     }
     @include mix.respond(small-430) {
       padding-bottom: 5px;
-      gap: 10px;
     }
   }
   &__title {
-    @include mix.text('Montserrat', 'normal', vars.$white, 26px, 130%, 500, 0);
+    @include mix.mainText2;
     margin-right: 4px;
   }
   &__text {
@@ -70,12 +74,11 @@
     text-align: center;
   }
   &__button {
-    margin-top: 8px;
     cursor: pointer;
     transition: all 0.4s ease-out;
     @include mix.button(240px, transparent, 10px, vars.$purple);
     @include mix.respond(large-1500) {
-      margin-top: 40px;
+      //margin-top: 40px;
       gap: 12px;
     }
     @include mix.respond(medium-960) {
@@ -107,7 +110,8 @@
     background-color: vars.$purple;
     padding: 12px 20px;
     position: absolute;
-    @include mix.text('Montserrat', 'normal', vars.$white, 26px, 130%, 500, 0);
+    @include mix.mainText2;
     border-top-left-radius: vars.$border-radius;
+    border-bottom-right-radius: vars.$border-radius;
   }
 }

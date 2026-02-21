@@ -44,7 +44,8 @@
   }
 
   &__text {
-    @include mix.text('Montserrat', 'normal', vars.$black, 26px, 130%, 500, 0);
+    @include mix.mainText2;
+    color: vars.$black;
     text-align: center;
     max-width: 920px;
     @include mix.respond(large-1500) {

@@ -90,7 +90,7 @@
     }
 
     &__title {
-      @include mix.text('Montserrat', 'normal', vars.$white, 26px, 130%, 500, 0);
+      @include mix.mainText2;
       @include mix.respond(large-1030) {
         text-align: center;
       }

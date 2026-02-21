@@ -21,8 +21,10 @@ async function fetchAnimals() {
                   <img class="card__image__img" src="/images/${animal.animal}.png" alt="Animal" />
                 </div>
                 <div class="card__text-block">
-                  <h3 class="card__title">${animal.cardName}</h3>
-                  <p class="card__text">${animal.cardText}</p>
+                  <div class="card__text-block__top">
+                    <h3 class="card__title">${animal.cardName}</h3>
+                    <p class="card__text">${animal.cardText}</p>
+                  </div>
                   <button class="card__button">
                     <span class="card__button__text">VIEW LIVE CAM</span>
                     <svg width="28" height="25" viewBox="0 0 28 25" fill="none" xmlns="http://www.w3.org/2000/svg" class="card__button__svg">
