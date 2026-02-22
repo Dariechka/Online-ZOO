@@ -119,8 +119,20 @@
     }
   }
 
+  @if ($breakpoint==large-1740) {
+    @media only screen and (max-width: 1740px) {
+      @content;
+    }
+  }
+
   @if ($breakpoint==large-1500) {
     @media only screen and (min-width: 1081px) and (max-width: 1500px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==large-1090) {
+    @media only screen and (max-width: 1090px) {
       @content;
     }
   }
