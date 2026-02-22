@@ -146,7 +146,9 @@
           margin-top: 0;
         }
         & > .feed__info__text_text {
-          width: 280px;
+          @include mix.respond(small-615) {
+            width: 280px;
+          }
         }
       }
       @include mix.respond(large-1800) {

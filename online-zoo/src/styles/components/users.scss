@@ -1,0 +1,114 @@
+@use './../_variables' as vars;
+@use './../_mixins' as mix;
+
+.users {
+  &__container {
+    padding: 100px 0 150px 260px;
+    background: linear-gradient(177.34deg, #20113D 7.26%, rgba(32, 17, 61, 0) 14.89%), linear-gradient(144.77deg, #20113D 18.53%, rgba(32, 17, 61, 0) 46.43%), url(/public/images/users.png) -245px 65% / 147% auto no-repeat;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto 1fr;
+    column-gap: 40px;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &__title {
+      @include mix.title(54px);
+      color: vars.$white;
+      max-width: 440px;
+      letter-spacing: 0;
+    }
+
+    &__text {
+      @include mix.mainText2();
+      max-width: 560px;
+    }
+  }
+  &__button {
+    margin-top: 376px;
+    @include mix.button(359px, transparent, 10px, vars.$white);
+    transition: all 0.4s linear;
+    &__text {
+      @include mix.buttonText(vars.$white);
+    }
+    &__svg {
+      color: vars.$white;
+    }
+    &:hover {
+      background-color: vars.$turquoise;
+    }
+  }
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    &__items {
+      display: grid;
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto;
+      gap: 30px;
+    }
+    &__item {
+      position: relative;
+      width: 515px;
+      height: 463px;
+      padding: 136px 50px 72px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 50px rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      background-color: vars.$white;
+      &__text-block {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        max-width: 415px;
+      }
+      &__svg {
+        position: absolute;
+        top: 47px;
+        left: 53px;
+      }
+      &__title {
+        @include mix.mainText2();
+        color: vars.$black;
+      }
+      &__text {
+        @include mix.mainText();
+        color: vars.$black;
+      }
+      &__name {
+        @include mix.text('Montserrat', 'normal', vars.$black, 18px, 100%, 600, 0);
+        text-transform: uppercase;
+      }
+    }
+    &__buttons {
+      display: flex;
+      gap: 60px;
+      &__button {
+        width: 60px;
+        height: 60px;
+        @include mix.center(0);
+        justify-content: center;
+        background-color: transparent;
+        border-radius: vars.$border-radius;
+        border: 1px solid vars.$white;
+        cursor: pointer;
+        transition: all 0.4s linear;
+        &__svg {
+          color: vars.$white;
+        }
+        &:hover {
+          background-color: vars.$white;
+        }
+        &:hover .users__grid__buttons__button__svg {
+          color: vars.$purple;
+        }
+      }
+    }
+  }
+}
