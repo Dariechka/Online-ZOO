@@ -1,0 +1,7 @@
+@use './../_variables' as vars;
+@use './../_mixins' as mix;
+
+.footer {
+  &__container {
+  }
+}
