@@ -118,5 +118,21 @@
     @include mix.mainText2;
     border-top-left-radius: vars.$border-radius;
     border-bottom-right-radius: vars.$border-radius;
+    @include mix.respond(medium-960) {
+      padding: 12px 26px 12px 25px;
+    }
+  }
+
+  &:nth-child(4) {
+    @include mix.respond(medium-960) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+  &:nth-child(6) {
+    @include mix.respond(medium-960) {
+      grid-column: 2;
+      grid-row: 1;
+    }
   }
 }

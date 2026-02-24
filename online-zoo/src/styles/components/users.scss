@@ -294,6 +294,7 @@
     &__points {
       display: none;
       &__point {
+        cursor: pointer;
         width: 8px;
         height: 8px;
         border: 1px solid vars.$white;
