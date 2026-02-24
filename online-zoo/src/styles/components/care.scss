@@ -9,7 +9,7 @@
     flex-direction: column;
     @include mix.respond(large-1500) {
       padding-top: 150px;
-      padding-bottom: 152px;
+      padding-bottom: 146px;
       gap: 50px;
     }
     @include mix.respond(large-1090) {
