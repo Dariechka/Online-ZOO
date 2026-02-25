@@ -7,11 +7,337 @@
     padding-bottom: 150px;
     @include mix.center(70px);
     flex-direction: column;
+    @include mix.respond(large-1450) {
+      padding-top: 30px;
+      padding-bottom: 95px;
+      gap: 20px;
+    }
+    @include mix.respond(large-1199) {
+      padding-bottom: 97px;
+      padding-left: 0;
+      padding-right: 0;
+      gap: 70px;
+    }
+    @include mix.respond(small-639) {
+      padding-top: 20px;
+      padding-bottom: 50px;
+      gap: 20px;
+    }
   }
   &__title {
     @include mix.title(54px);
     color: vars.$purple;
     max-width: 595px;
     text-align: center;
+    margin-left: 2px;
+    letter-spacing: 0;
+    @include mix.respond(large-1199) {
+      max-width: 600px;
+      font-size: 42px;
+      font-weight: 500;
+      margin-left: 0;
+    }
+    @include mix.respond(small-639) {
+      max-width: 301px;
+      font-size: 26px;
+      line-height: 130%;
+      text-transform: none;
+    }
+  }
+
+  &__map-container {
+    position: relative;
+  }
+
+  &__svg-map {
+    width: 1406px;
+    height: 912px;
+    @include mix.respond(large-1450) {
+      width: 1198px;
+      height: 777px;
+    }
+    @include mix.respond(large-1199) {
+      width: 639.86px;
+      height: 415px;
+    }
+    @include mix.respond(small-639) {
+      width: 361.72px;
+      height: 233.99px;
+    }
+  }
+
+  &__drop-container {
+    position: absolute;
+    overflow: visible;
+    filter: drop-shadow(0px 4px 30px rgba(245, 128, 33, 0.7));
+    &_alligator {
+      top: 46%;
+      left: 21%;
+      @include mix.respond(large-1450) {
+        top: 44%;
+        left: 21.2%;
+      }
+      @include mix.respond(large-1199) {
+        top: 45.5%;
+        left: 21.5%;
+      }
+      @include mix.respond(small-639) {
+        top: 43.5%;
+        left: 22%;
+      }
+    }
+    &_lion {
+      top: 50.8%;
+      left: 41.3%;
+      @include mix.respond(large-1450) {
+        top: 47.3%;
+        left: 41%;
+      }
+      @include mix.respond(large-1199) {
+        top: 51%;
+        left: 42.2%;
+      }
+      @include mix.respond(small-639) {
+        top: 44.8%;
+        left: 42%;
+      }
+    }
+    &_gorilla {
+      top: 53%;
+      left: 49.5%;
+      @include mix.respond(large-1450) {
+        top: 50.5%;
+      }
+      @include mix.respond(large-1199) {
+        top: 53.2%;
+        left: 49.7%;
+      }
+      @include mix.respond(small-639) {
+        left: 49.5%;
+      }
+    }
+    &_lemur {
+      top: 66.8%;
+      left: 56.8%;
+      @include mix.respond(large-1450) {
+        top: 64%;
+        left: 56.95%;
+      }
+      @include mix.respond(large-1199) {
+        top: 66.6%;
+        left: 57.3%;
+      }
+      @include mix.respond(small-639) {
+        top: 63%;
+        left: 56.5%;
+      }
+    }
+    &_panda {
+      top: 39.4%;
+      left: 68%;
+      @include mix.respond(large-1450) {
+        top: 33.5%;
+        left: 72%;
+      }
+      @include mix.respond(large-1199) {
+        top: 37.7%;
+        left: 72.8%;
+      }
+      @include mix.respond(small-639) {
+        top: 37.3%;
+        left: 68.3%;
+      }
+    }
+    &_tiger {
+      top: 56.9%;
+      left: 72.6%;
+      @include mix.respond(large-1450) {
+        top: 55.5%;
+        left: 72.2%;
+      }
+      @include mix.respond(large-1199) {
+        top: 59.1%;
+        left: 73.1%;
+      }
+      @include mix.respond(small-639) {
+        top: 55.1%;
+        left: 73.2%;
+      }
+    }
+    &_koala {
+      top: 69.1%;
+      left: 81.8%;
+      @include mix.respond(large-1450) {
+        top: 66.8%;
+        left: 81.6%;
+      }
+      @include mix.respond(large-1199) {
+        top: 68.5%;
+        left: 80.4%;
+      }
+      @include mix.respond(small-639) {
+        top: 67.5%;
+        left: 81%;
+      }
+    }
+    &_eagles {
+      top: 40.5%;
+      left: 9.5%;
+      @include mix.respond(large-1450) {
+        top: 37%;
+        left: 8.5%;
+      }
+      @include mix.respond(small-639) {
+        top: 30%;
+        left: 7%;
+      }
+    }
+  }
+
+  &__drop {
+    width: 81px;
+    height: 121px;
+    @include mix.respond(large-1450) {
+      width: 80px;
+      height: 120px;
+    }
+    @include mix.respond(large-1199) {
+      width: 34px;
+      height: 51px;
+    }
+    @include mix.respond(small-639) {
+      width: 29px;
+      height: 42px;
+    }
+    &_alligator {
+      width: 57.76px;
+      height: 46.7px;
+      @include mix.animal();
+      @include mix.respond(large-1199) {
+        width: 24.26px;
+        height: 19.46px;
+        left: 20%;
+      }
+      @include mix.respond(small-639) {
+        width: 20.22px;
+        height: 16.22px;
+      }
+    }
+    &_lion {
+      width: 53px;
+      height: 47px;
+      @include mix.animal();
+      @include mix.respond(large-1199) {
+        width: 21.86px;
+        height: 19.46px;
+        left: 20%;
+      }
+      @include mix.respond(small-639) {
+        width: 18.21px;
+        height: 16.22px;
+      }
+    }
+    &_gorilla {
+      width: 55px;
+      height: 47px;
+      @include mix.animal();
+      @include mix.respond(large-1199) {
+        width: 23.04px;
+        height: 19.46px;
+        left: 20%;
+      }
+      @include mix.respond(small-639) {
+        width: 19.2px;
+        height: 16.22px;
+      }
+    }
+    &_lemur {
+      width: 35px;
+      height: 56px;
+      @include mix.animal();
+      left: 25%;
+      @include mix.respond(large-1199) {
+        width: 13.86px;
+        height: 23.33px;
+        left: 32%;
+      }
+      @include mix.respond(small-639) {
+        width: 11.55px;
+        height: 19.44px;
+      }
+    }
+    &_panda {
+      width: 59px;
+      height: 44px;
+      @include mix.animal();
+      @include mix.respond(large-1199) {
+        width: 24.74px;
+        height: 18.16px;
+        left: 20%;
+      }
+      @include mix.respond(small-639) {
+        width: 20.26px;
+        height: 15.14px;
+      }
+    }
+    &_tiger {
+      width: 63px;
+      height: 53px;
+      @include mix.animal();
+      @include mix.respond(large-1199) {
+        width: 25.03px;
+        height: 22px;
+        left: 20%;
+      }
+      @include mix.respond(small-639) {
+        width: 22px;
+        height: 19px;
+      }
+    }
+    &_koala {
+      width: 43px;
+      height: 54px;
+      @include mix.animal();
+      left: 20%;
+      @include mix.respond(large-1199) {
+        width: 17.91px;
+        height: 22.47px;
+        left: 23%;
+      }
+      @include mix.respond(small-639) {
+        width: 14.92px;
+        height: 18.72px;
+      }
+    }
+    &_eagles {
+      width: 49px;
+      height: 47px;
+      position: absolute;
+      left: 33%;
+      top: 24%;
+      @include mix.respond(large-1199) {
+        width: 22.15px;
+        height: 22.05px;
+        display: none;
+      }
+    }
+  }
+
+  &__drop2 {
+    width: 159px;
+    height: 203px;
+    filter: drop-shadow(0px 4px 30px rgba(245, 128, 33, 0.7));
+    @include mix.respond(large-1450) {
+      width: 146px;
+      height: 185px;
+    }
+    @include mix.respond(large-1199) {
+      width: 78px;
+      height: 100px;
+    }
+    @include mix.respond(small-639) {
+      width: 59px;
+      height: 79px;
+    }
   }
 }

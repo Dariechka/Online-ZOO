@@ -112,6 +112,12 @@
   object-fit: cover;
 }
 
+@mixin animal() {
+  position: absolute;
+  top: 14%;
+  left: 12%;
+}
+
 @mixin respond($breakpoint) {
   @if ($breakpoint==large-1900) {
     @media only screen and (max-width: 1900px) {
@@ -133,6 +139,18 @@
 
   @if ($breakpoint==large-1500) {
     @media only screen and (min-width: 1081px) and (max-width: 1500px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==large-1450) {
+    @media only screen and (max-width: 1450px) {
+      @content;
+    }
+  }
+
+  @if ($breakpoint==large-1199) {
+    @media only screen and (max-width: 1199px) {
       @content;
     }
   }
