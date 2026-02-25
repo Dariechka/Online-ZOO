@@ -95,7 +95,6 @@
 
   &__button {
     margin-top: 10px;
-    transition: all 0.4s linear;
     @include mix.button(240px, vars.$orange, 10px);
     &_text {
       @include mix.buttonText(vars.$white);

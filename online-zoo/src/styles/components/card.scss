@@ -80,7 +80,6 @@
   }
   &__button {
     cursor: pointer;
-    transition: all 0.4s ease-out;
     @include mix.button(240px, transparent, 10px, vars.$purple);
     @include mix.respond(large-1500) {
       gap: 12px;

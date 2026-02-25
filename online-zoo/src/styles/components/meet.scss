@@ -65,7 +65,6 @@
   &__button {
     margin-top: 50px;
     @include mix.button(359px, transparent, 10px, vars.$purple);
-    transition: all 0.4s linear;
     @include mix.respond(large-1500) {
       margin-top: 20px;
     }

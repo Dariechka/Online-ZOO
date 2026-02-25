@@ -1,0 +1,241 @@
+@use './../_variables' as vars;
+@use './../_mixins' as mix;
+
+.contact {
+  &__container {
+    padding-bottom: 150px;
+    @include mix.center(150px);
+    flex-direction: column;
+    @include mix.respond(large-1500) {
+      padding-bottom: 100px;
+      gap: 50px;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    @include mix.respond(large-1030) {
+      padding-bottom: 100px;
+      gap: 50px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    @include mix.respond(small-615) {
+      padding-bottom: 80px;
+      gap: 32px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+  &__picture {
+    width: 1400px;
+    height: 815px;
+    background: linear-gradient(140.25deg, #ffffff 5.02%, rgba(255, 255, 255, 0) 8.83%);
+    background-image: url('/public/images/contact.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    @include mix.respond(large-1500) {
+      width: 1200px;
+      background-position: left center;
+    }
+    @include mix.respond(medium-850) {
+      width: 640px;
+      height: 434px;
+      background-position: -30px center;
+    }
+    @include mix.respond(small-615) {
+      background-position: -15px center;
+      width: 320px;
+      height: 217px;
+    }
+  }
+  &__content {
+    display: flex;
+    gap: 175px;
+    @include mix.respond(large-1500) {
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
+    }
+    @include mix.respond(large-1030) {
+      flex-direction: column;
+      gap: 50px;
+      align-items: center;
+    }
+    @include mix.respond(small-615) {
+      gap: 45px;
+    }
+    &__text {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      @include mix.respond(large-1500) {
+        gap: 30px;
+      }
+      @include mix.respond(large-1030) {
+        gap: 18px;
+      }
+      @include mix.respond(small-615) {
+        gap: 19px;
+      }
+      &__title {
+        @include mix.title(54px);
+        letter-spacing: 0.1px;
+        @include mix.respond(large-1500) {
+          text-align: center;
+          margin-left: -10px;
+        }
+        @include mix.respond(large-1030) {
+          text-align: center;
+          margin-left: 0;
+        }
+        @include mix.respond(small-615) {
+          font-size: 26px;
+          font-weight: 500;
+          line-height: 100%;
+        }
+      }
+      &__text {
+        @include mix.mainText();
+        width: 545px;
+        @include mix.respond(large-1500) {
+          width: 835px;
+          text-align: center;
+          margin-right: -80px;
+        }
+        @include mix.respond(large-1030) {
+          width: 600px;
+          text-align: center;
+          margin-right: 0;
+        }
+        @include mix.respond(small-615) {
+          width: 300px;
+        }
+      }
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    @include mix.respond(small-615) {
+      gap: 5px;
+    }
+    &_text {
+      @include mix.mainText();
+      &_asterix {
+        color: vars.$turquoise;
+      }
+    }
+  }
+
+  &__input {
+    width: 680px;
+    height: 60px;
+    border: 1px solid vars.$black;
+    border-radius: vars.$border-radius;
+    padding-top: 4px;
+    padding-left: 19.5px;
+    @include mix.mainText();
+    @include mix.respond(large-1500) {
+      width: 740px;
+    }
+    @include mix.respond(large-1030) {
+      width: 600px;
+    }
+    @include mix.respond(small-615) {
+      width: 300px;
+      height: 50px;
+      padding-top: 0;
+      padding-left: 9px;
+    }
+    &::placeholder {
+      margin: 0;
+      @include mix.mainText();
+      color: vars.$gray;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid vars.$turquoise;
+      box-shadow: 0 4px 30px rgba(0, 160, 146, 0.3);
+    }
+    &:invalid {
+      outline: none;
+      background: rgba(245, 128, 33, 0.2);
+      border: 1px solid vars.$orange;
+      & ~ .contact__error {
+        display: block;
+      }
+    }
+  }
+
+  &__error {
+    @include mix.mainText();
+    color: vars.$orange;
+    position: absolute;
+    top: 105%;
+    left: 1%;
+    display: none;
+  }
+
+  &__texarea {
+    width: 680px;
+    height: 200px;
+    border: 1px solid vars.$black;
+    border-radius: vars.$border-radius;
+    @include mix.mainText();
+    padding-top: 19px;
+    padding-left: 20px;
+    @include mix.respond(large-1500) {
+      width: 740px;
+    }
+    @include mix.respond(large-1030) {
+      width: 600px;
+    }
+    @include mix.respond(small-615) {
+      width: 300px;
+      height: 200px;
+      padding-top: 13px;
+      padding-left: 9px;
+    }
+
+    &::placeholder {
+      margin: 0;
+      @include mix.mainText();
+      color: vars.$gray;
+    }
+  }
+
+  &__button {
+    margin-top: 37px;
+    @include mix.button(359px, vars.$turquoise, 10px);
+    @include mix.respond(large-1500) {
+      margin-top: 20px;
+    }
+    @include mix.respond(large-1030) {
+      align-self: center;
+      width: 290px;
+    }
+    @include mix.respond(small-615) {
+      align-self: center;
+      width: 300px;
+      height: 50px;
+      margin-top: 0;
+    }
+    &__text {
+      @include mix.buttonText(vars.$white);
+    }
+    &__svg {
+      color: vars.$white;
+    }
+    &:hover {
+      box-shadow: 0 4px 30px rgba(0, 160, 146, 0.3);
+      background-color: vars.$turquoise-black;
+    }
+  }
+}
