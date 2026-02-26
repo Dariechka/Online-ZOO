@@ -1,0 +1,238 @@
+@use './../_variables' as vars;
+@use './../_mixins' as mix;
+
+.pop-up {
+  position: fixed;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 920px;
+  background: vars.$white;
+  box-shadow: 0 4px 50px rgba(0, 0, 0, 0.5);
+  border-radius: vars.$border-radius;
+
+  &__header {
+    width: 100%;
+    height: 135px;
+    background-color: vars.$orange;
+    border-top-left-radius: vars.$border-radius;
+    border-top-right-radius: vars.$border-radius;
+    @include mix.center(0);
+    justify-content: center;
+  }
+
+  &__title {
+    @include mix.title(42px);
+    color: vars.$white;
+  }
+
+  &__information {
+    width: 100%;
+    height: 87px;
+    border-bottom: 1px solid vars.$gray;
+    padding-left: 120px;
+    padding-top: 50px;
+    &__text {
+      @include mix.mainText();
+      font-weight: 600;
+    }
+  }
+
+  &__bottom {
+    padding-top: 40px;
+    padding-left: 120px;
+    padding-bottom: 50px;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 120px;
+  }
+
+  &__back {
+    @include mix.button(200px, transparent, 0);
+    @include mix.buttonText(vars.$turquoise);
+    padding-left: 59.36px;
+    justify-content: flex-start;
+    text-decoration: underline;
+    &:hover {
+      color: vars.$purple;
+    }
+  }
+
+  &__next {
+    margin-right: 105px;
+    @include mix.button(200px, vars.$turquoise, 10px);
+    &__text {
+      @include mix.buttonText(vars.$white);
+    }
+    &__svg {
+      color: vars.$white;
+    }
+    &:hover {
+      box-shadow: 0 4px 30px rgba(0, 160, 146, 0.3);
+      background-color: vars.$turquoise-black;
+    }
+  }
+
+  &__complete {
+    @include mix.button(359px, vars.$orange, 10px);
+    &__text {
+      @include mix.buttonText(vars.$white);
+    }
+    &__svg {
+      color: vars.$white;
+    }
+    &:hover {
+      background: vars.$dark-orange;
+      box-shadow: 0 4px 30px rgba(245, 128, 33, 0.3);
+    }
+  }
+
+  &__points {
+    display: flex;
+    gap: 10px;
+    &__item {
+      width: 10px;
+      height: 10px;
+      border: 1px solid vars.$turquoise;
+      border-radius: 50%;
+      background-color: transparent;
+    }
+  }
+
+  &__first {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 50px;
+    &__amount {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      @include mix.respond(small-615) {
+        gap: 5px;
+      }
+      &_text {
+        @include mix.mainText();
+        &_asterix {
+          color: vars.$turquoise;
+        }
+      }
+      &__buttons {
+        display: flex;
+        gap: 40px;
+      }
+      &__button {
+        @include mix.button(80px, vars.$turquoise-transparent, 0);
+        height: 65px;
+        @include mix.buttonText(vars.$white);
+        &:hover {
+          box-shadow: 0 4px 30px rgba(0, 160, 146, 0.3);
+          background-color: vars.$turquoise-black;
+        }
+      }
+    }
+    &__other {
+      display: flex;
+      gap: 40px;
+      position: relative;
+      &__button {
+        @include mix.button(200px, vars.$turquoise, 0);
+        height: 65px;
+        @include mix.buttonText(vars.$white);
+        &:hover {
+          box-shadow: 0 4px 30px rgba(0, 160, 146, 0.3);
+          background-color: vars.$turquoise-black;
+        }
+      }
+      &__error {
+        left: 30%;
+      }
+    }
+    &__special {
+      display: flex;
+      gap: 40px;
+      &__button {
+        @include mix.button(200px, vars.$turquoise-transparent, 0);
+        height: 65px;
+        @include mix.buttonText(vars.$white);
+        cursor: auto;
+      }
+    }
+    &__gift {
+      position: relative;
+    }
+  }
+
+  &__input {
+    border: 1px solid vars.$black;
+    border-radius: vars.$border-radius;
+    padding-left: 20px;
+    @include mix.mainText();
+    &::placeholder {
+      margin: 0;
+      @include mix.mainText();
+      color: vars.$gray;
+    }
+    &:focus {
+      outline: none;
+      border: 1px solid vars.$turquoise;
+      box-shadow: 0 4px 30px rgba(0, 160, 146, 0.3);
+    }
+    &:invalid {
+      outline: none;
+      background: rgba(245, 128, 33, 0.2);
+      border: 1px solid vars.$orange;
+      & ~ .pop-up__error {
+        display: block;
+      }
+    }
+  }
+
+  &__error {
+    @include mix.mainText();
+    color: vars.$orange;
+    position: absolute;
+    display: none;
+    top: 105%;
+  }
+
+  &__checkbox {
+    position: absolute;
+    opacity: 0;
+    left: -100vw;
+    &__state {
+      display: flex;
+      gap: 20px;
+    }
+    &__control {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      border: 1px solid vars.$black;
+    }
+    &__title {
+      @include mix.mainText();
+    }
+    &:checked ~ .pop-up__checkbox__state .pop-up__checkbox__control {
+      background-color: vars.$turquoise;
+    }
+    &:checked ~ .pop-up__checkbox__state .pop-up__checkbox__title {
+      text-decoration: underline;
+    }
+  }
+}
+
+.fill {
+  background-color: vars.$turquoise;
+}
+
+.hidden {
+  display: none;
+}

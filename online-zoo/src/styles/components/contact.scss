@@ -168,7 +168,7 @@
       outline: none;
       background: rgba(245, 128, 33, 0.2);
       border: 1px solid vars.$orange;
-      & ~ .contact__error {
+      & ~ .pop-up__error {
         display: block;
       }
     }
