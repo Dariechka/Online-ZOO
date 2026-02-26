@@ -156,6 +156,12 @@
     }
   }
 
+  @if ($breakpoint==large-1150) {
+    @media only screen and (max-width: 1150px) {
+      @content;
+    }
+  }
+
   @if ($breakpoint==large-1130) {
     @media only screen and (max-width: 1130px) {
       @content;
