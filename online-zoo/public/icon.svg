@@ -348,5 +348,11 @@
                     </filter>
                 </defs>
         </symbol>
+        <symbol id="arrow-bottom" fill="none">
+            <path d="M0.359375 0.358887L8.11695 8.35889L16.3594 0.358887" stroke="black"/>
+        </symbol>
+        <symbol id="arrow-top" fill="none">
+            <path d="M16.3486 8.70728L8.59106 0.707275L0.348632 8.70728" stroke="black"/>
+        </symbol>
     </defs>
 </svg>
