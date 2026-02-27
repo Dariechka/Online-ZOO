@@ -49,6 +49,31 @@
     position: relative;
   }
 
+  &__border {
+    position: absolute;
+    color: transparent;
+    width: 150px;
+    height: 200px;
+    display: none;
+    bottom: -33%;
+    left: -42%;
+    @include mix.respond(large-1450) {
+      left: -44%;
+    }
+    @include mix.respond(large-1199) {
+      width: 70px;
+      height: 80px;
+      bottom: -25%;
+      left: -53.5%;
+    }
+    @include mix.respond(small-639) {
+      width: 50px;
+      height: 95px;
+      bottom: -55%;
+      left: -37%;
+    }
+  }
+
   &__svg-map {
     width: 1406px;
     height: 912px;
@@ -69,7 +94,18 @@
   &__drop-container {
     position: absolute;
     overflow: visible;
+    cursor: pointer;
+    transition: all 0.5s linear;
     filter: drop-shadow(0px 4px 30px rgba(245, 128, 33, 0.7));
+    &:hover {
+      filter: drop-shadow(0px 4px 30px rgba(245, 128, 33, 0.7));
+    }
+    &:hover > .map__drop {
+      color: vars.$white;
+    }
+    &:hover > .map__border {
+      display: block;
+    }
     &_alligator {
       top: 46%;
       left: 21%;
@@ -181,15 +217,19 @@
       }
     }
     &_eagles {
-      top: 40.5%;
-      left: 9.5%;
+      top: 45.5%;
+      left: 12.2%;
       @include mix.respond(large-1450) {
-        top: 37%;
-        left: 8.5%;
+        top: 41.5%;
+        left: 11.3%;
+      }
+      @include mix.respond(large-1199) {
+        top: 45%;
+        left: 12%;
       }
       @include mix.respond(small-639) {
-        top: 30%;
-        left: 7%;
+        top: 40%;
+        left: 11%;
       }
     }
   }
@@ -197,6 +237,8 @@
   &__drop {
     width: 81px;
     height: 121px;
+    color: vars.$orange;
+    transition: all 0.4s ease-in-out;
     @include mix.respond(large-1450) {
       width: 80px;
       height: 120px;
@@ -313,12 +355,11 @@
       width: 49px;
       height: 47px;
       position: absolute;
-      left: 33%;
-      top: 24%;
+      left: 20%;
+      top: 14%;
       @include mix.respond(large-1199) {
         width: 22.15px;
         height: 22.05px;
-        display: none;
       }
     }
   }
