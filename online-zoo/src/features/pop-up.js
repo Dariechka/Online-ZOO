@@ -1,7 +1,7 @@
 const popUpData = [
-    {
-        info: 'Donation',
-        html: `<div class="pop-up__first">
+  {
+    info: 'Donation',
+    html: `<div class="pop-up__first">
         <div class="pop-up__first__amount">
           <p class="pop-up__first__amount_text"><span class="pop-up__first__amount_text_asterix">*</span> Choose your donation amount:</p>
           <div class="pop-up__first__amount__buttons">
@@ -54,11 +54,12 @@ const popUpData = [
             <span class="pop-up__checkbox__title">Make this a monthly recurring gift</span>
           </span>
         </label>
-      </div>`
-    },
-    {
-        info: 'Billing',
-        html: `<div class="pop-up__second">
+      </div>`,
+  },
+  {
+    info: 'Billing',
+    additionalClass: 'pop-up__information__text_second',
+    html: `<div class="pop-up__second">
         <label class="pop-up__label">
           <span class="pop-up__label_text"><span class="pop-up__label_text_asterix">*</span> Your Name</span>
           <input
@@ -80,20 +81,22 @@ const popUpData = [
               placeholder="Enter your email"
               class="pop-up__input pop-up__input_second"
           />
-          <span class="pop-up__error">Invalid email</span>
+          <span class="pop-up__error pop-up__error_email">Invalid email</span>
           <span class="pop-up__label_text pop-up__label_text_note">You will receive emails from the Online Zoo, including updates and news on the latest discoveries and translations. You can unsubscribe at any time.</span>
         </label>
-      </div>`
-    },
-    {
-        info: 'Payment',
-        html: `<div class="pop-up__third">
-        <div class="pop-up__third__section">
+      </div>`,
+  },
+  {
+    info: 'Payment',
+    additionalClass: 'pop-up__information_third',
+    html: `<div class="pop-up__third">
+        <div class="pop-up__third__section pop-up__third__section_top">
           <label class="pop-up__label">
             <span class="pop-up__label_text"><span class="pop-up__label_text_asterix">*</span> Credit Card Number</span>
             <input
-                type="number"
+                type="text"
                 name="card-number"
+                pattern="^\\d+$"
                 autocomplete="none"
                 class="pop-up__input pop-up__input_card"
             />
@@ -102,7 +105,7 @@ const popUpData = [
           <label class="pop-up__label">
             <span class="pop-up__label_text"><span class="pop-up__label_text_asterix">*</span> CVV Number</span>
             <input
-                type="number"
+                type="text"
                 name="cvv"
                 autocomplete="none"
                 pattern="^\\d{3,4}$"
@@ -116,6 +119,9 @@ const popUpData = [
             <p class="pop-up__label_text"><span class="pop-up__label_text_asterix">*</span> Expiration Date</p>
             <div class="pop-up__select">
               <div class="pop-up__select__header">
+              
+              
+              
                 <div class="pop-up__select__header__input pop-up__select__header__input_month">Month</div>
                 <div class="pop-up__select__header__arrow pop-up__select__header__arrow_month">
                   <svg width="17" height="10" viewBox="0 0 17 10">
@@ -177,99 +183,235 @@ const popUpData = [
             </div>
           </div>
         </div>
-        </div>`
-    }
+      </div>`,
+  },
 ]
 
 let step = 1
 
-const popUp = document.querySelector('.pop-up');
 const body = document.body
 const background = document.querySelector('.background')
-const nextButton = document.querySelector('.pop-up__next');
-const backButton = document.querySelector('.pop-up__back');
-const complete = document.querySelector('.pop-up__complete');
-const dynamicContainer = document.querySelector('.pop-up__dynamic');
-const information = document.querySelector('.pop-up__information__text');
-const pointsContainer = document.querySelector('.pop-up__points');
+const button = document.querySelector('.donation__donate__button')
 
-function changText() {
-    information.textContent = `${popUpData[step-1].info} Information:`;
-}
+button.addEventListener('click', () => {
+  body.classList.add('no-scroll')
+  background.style.display = 'block'
 
-function renderContent() {
+  body.insertAdjacentHTML(
+    `afterbegin`,
+    `<div class="pop-up">
+  <div class="pop-up__header">
+    <h2 class="pop-up__title">make your donation</h2>
+  </div>
+  <div class="pop-up__information">
+    <p class="pop-up__information__text">Payment Information:</p>
+  </div>
+  <div class="pop-up__bottom">
+    <div class="pop-up__dynamic">
+    </div>
+    <div class="pop-up__buttons">
+      <div class="pop-up__buttons__top">
+        <div class="pop-up__points">
+          <span class="pop-up__points__item"></span>
+          <span class="pop-up__points__item"></span>
+          <span class="pop-up__points__item"></span>
+        </div>
+        <button class="pop-up__back hidden">
+          <span class="pop-up__back__text">Back</span>
+          <svg width="25" height="22" viewBox="0 0 25 22">
+            <use href="/icon.svg#arrow" class="pop-up__back__svg"></use>
+          </svg>
+        </button>
+      </div>
+      <button class="pop-up__next">
+        <span class="pop-up__next__text">next</span>
+        <svg width="25" height="22" viewBox="0 0 25 22">
+          <use href="/icon.svg#arrow" class="pop-up__next__svg"></use>
+        </svg>
+      </button>
+      <button class="pop-up__complete hidden">
+        <span class="pop-up__complete__text">complete donation</span>
+        <svg width="25" height="22" viewBox="0 0 25 22">
+          <use href="/icon.svg#arrow" class="pop-up__complete__svg"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>`
+  )
+
+  const popUp = document.querySelector('.pop-up')
+  const nextButton = document.querySelector('.pop-up__next')
+  const backButton = document.querySelector('.pop-up__back')
+  const complete = document.querySelector('.pop-up__complete')
+  const dynamicContainer = document.querySelector('.pop-up__dynamic')
+  const information = document.querySelector('.pop-up__information__text')
+  const pointsContainer = document.querySelector('.pop-up__points')
+  const infoText = document.querySelector('.pop-up__information__text')
+  const infoContainer = document.querySelector('.pop-up__information')
+
+  function changText() {
+    information.textContent = `${popUpData[step - 1].info} Information:`
+  }
+
+  function renderContent() {
     for (let child of dynamicContainer.children) {
-        child.remove();
+      child.remove()
     }
-    dynamicContainer.insertAdjacentHTML(`afterbegin`, popUpData[step-1].html)
-}
+    dynamicContainer.insertAdjacentHTML(`afterbegin`, popUpData[step - 1].html)
+  }
 
-function fillPoints() {
-    [...pointsContainer.children].forEach((point, index) => {
-        index <= (step - 1) ? point.classList.add('fill') : point.classList.remove('fill')
+  function fillPoints() {
+    ;[...pointsContainer.children].forEach((point, index) => {
+      index <= step - 1 ? point.classList.add('fill') : point.classList.remove('fill')
     })
-}
+  }
 
-function closePopUp() {
+  function closePopUp() {
     popUp.remove()
     body.classList.remove('no-scroll')
     background.style.display = 'none'
-}
+  }
 
-changText();
-renderContent();
-fillPoints();
-body.classList.add('no-scroll')
-background.style.display = 'block'
-
-nextButton.addEventListener('click', () => {
-    step += 1
-    backButton.classList.remove('hidden');
-    changText();
-    renderContent();
-    fillPoints();
+  function fixInfoText() {
+    infoText.classList.remove('pop-up__information__text_second')
+    infoContainer.classList.remove('pop-up__information_third')
+    if (step === 2) {
+      infoText.classList.add('pop-up__information__text_second')
+    }
     if (step === 3) {
-        nextButton.classList.add('hidden');
-        complete.classList.remove('hidden');
+      infoContainer.classList.add('pop-up__information_third')
     }
-})
+  }
 
-backButton.addEventListener('click', () => {
-    step -= 1
-    nextButton.classList.remove('hidden');
-    complete.classList.add('hidden');
-    changText();
-    renderContent();
-    fillPoints();
+  function modalsLogic() {
     if (step === 1) {
-        backButton.classList.add('hidden');
-    }
-})
+      const selectListFavorite = document.querySelector('.pop-up__select__list_favorite')
+      const arrowButtonFavorite = document.querySelector('.pop-up__select__header__arrow_favorite')
+      const inputFavorite = document.querySelector('.pop-up__select__header__input_favorite')
+      const topArrowFavorite = document.querySelector('.pop-up__select__list__arrow-top_favorite')
+      const bottomArrowFavorite = document.querySelector('.pop-up__select__list__arrow-bottom_favorite')
 
-complete.addEventListener('click', () => {
+      arrowButtonFavorite.addEventListener('click', () => {
+        selectListFavorite.classList.toggle('hidden')
+        topArrowFavorite.classList.toggle('hidden')
+        bottomArrowFavorite.classList.toggle('hidden')
+      })
+
+      for (let child of selectListFavorite.children) {
+        child.addEventListener('click', () => {
+          inputFavorite.textContent = child.textContent
+          selectListFavorite.classList.add('hidden')
+          topArrowFavorite.classList.add('hidden')
+          bottomArrowFavorite.classList.add('hidden')
+        })
+      }
+      popUp.addEventListener('click', (event) => {
+        if (arrowButtonFavorite.contains(event.target)) return
+        selectListFavorite.classList.add('hidden')
+        topArrowFavorite.classList.add('hidden')
+        bottomArrowFavorite.classList.add('hidden')
+      })
+    } else if (step === 3) {
+      const selectListMonth = document.querySelector('.pop-up__select__list_month')
+      const selectListYear = document.querySelector('.pop-up__select__list_year')
+      const arrowButtonMonth = document.querySelector('.pop-up__select__header__arrow_month')
+      const arrowButtonYear = document.querySelector('.pop-up__select__header__arrow_year')
+      const inputMonth = document.querySelector('.pop-up__select__header__input_month')
+      const inputYear = document.querySelector('.pop-up__select__header__input_year')
+      const topArrowMonth = document.querySelector('.pop-up__select__list__arrow-top_month')
+      const bottomArrowMonth = document.querySelector('.pop-up__select__list__arrow-bottom_month')
+      const topArrowYear = document.querySelector('.pop-up__select__list__arrow-top_year')
+      const bottomArrowYear = document.querySelector('.pop-up__select__list__arrow-bottom_year')
+
+      arrowButtonMonth.addEventListener('click', () => {
+        selectListMonth.classList.toggle('hidden')
+        topArrowMonth.classList.toggle('hidden')
+        bottomArrowMonth.classList.toggle('hidden')
+      })
+
+      arrowButtonYear.addEventListener('click', () => {
+        selectListYear.classList.toggle('hidden')
+        topArrowYear.classList.toggle('hidden')
+        bottomArrowYear.classList.toggle('hidden')
+      })
+
+      for (let child of selectListMonth.children) {
+        child.addEventListener('click', () => {
+          inputMonth.textContent = child.textContent
+          selectListMonth.classList.add('hidden')
+          topArrowMonth.classList.add('hidden')
+          bottomArrowMonth.classList.add('hidden')
+        })
+      }
+
+      for (let child of selectListYear.children) {
+        child.addEventListener('click', () => {
+          inputYear.textContent = child.textContent
+          selectListYear.classList.add('hidden')
+          topArrowYear.classList.add('hidden')
+          bottomArrowYear.classList.add('hidden')
+        })
+      }
+      popUp.addEventListener('click', (event) => {
+        if (arrowButtonMonth.contains(event.target) || arrowButtonYear.contains(event.target)) return
+        selectListMonth.classList.add('hidden')
+        topArrowMonth.classList.add('hidden')
+        bottomArrowMonth.classList.add('hidden')
+        selectListYear.classList.add('hidden')
+        topArrowYear.classList.add('hidden')
+        bottomArrowYear.classList.add('hidden')
+      })
+    }
+  }
+
+  changText()
+  renderContent()
+  fillPoints()
+  fixInfoText()
+  modalsLogic()
+  body.classList.add('no-scroll')
+  background.style.display = 'block'
+
+  nextButton.addEventListener('click', () => {
+    step += 1
+    backButton.classList.remove('hidden')
+    changText()
+    renderContent()
+    fillPoints()
+    fixInfoText()
+    modalsLogic()
+    if (step === 3) {
+      nextButton.classList.add('hidden')
+      complete.classList.remove('hidden')
+    }
+  })
+
+  backButton.addEventListener('click', () => {
+    step -= 1
+    nextButton.classList.remove('hidden')
+    complete.classList.add('hidden')
+    changText()
+    renderContent()
+    fillPoints()
+    fixInfoText()
+    modalsLogic()
+    if (step === 1) {
+      backButton.classList.add('hidden')
+    }
+  })
+
+  complete.addEventListener('click', () => {
     closePopUp()
     step = 1
+  })
+
+  body.addEventListener('click', function closePopUpListener(event) {
+    if ((popUp.contains(event.target) && !complete.contains(event.target)) || button.contains(event.target)) {
+      return
+    }
+
+    closePopUp()
+    body.removeEventListener('click', closePopUpListener)
+  })
 })
-
-
-
-const selectListFavorite = document.querySelector('.pop-up__select__list_favorite');
-const arrowButtonFavorite = document.querySelector('.pop-up__select__header__arrow_favorite');
-const inputFavorite = document.querySelector('.pop-up__select__header__input_favorite');
-const topArrowFavorite = document.querySelector('.pop-up__select__list__arrow-top_favorite');
-const bottomArrowFavorite = document.querySelector('.pop-up__select__list__arrow-bottom_favorite');
-
-arrowButtonFavorite.addEventListener('click', () => {
-    selectListFavorite.classList.toggle('hidden');
-    topArrowFavorite.classList.toggle('hidden');
-    bottomArrowFavorite.classList.toggle('hidden');
-})
-
-for (let child of selectListFavorite.children) {
-    child.addEventListener('click', () => {
-        inputFavorite.textContent = child.textContent;
-        selectListFavorite.classList.add('hidden');
-        topArrowFavorite.classList.add('hidden');
-        bottomArrowFavorite.classList.add('hidden');
-    })
-}

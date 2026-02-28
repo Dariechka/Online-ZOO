@@ -13,6 +13,12 @@
   background: vars.$white;
   box-shadow: 0 4px 50px rgba(0, 0, 0, 0.5);
   border-radius: vars.$border-radius;
+  @include mix.respond(large-1030) {
+    width: 600px;
+  }
+  @include mix.respond(small-639) {
+    width: 300px;
+  }
 
   &__header {
     width: 100%;
@@ -22,12 +28,23 @@
     border-top-right-radius: vars.$border-radius;
     @include mix.center(0);
     justify-content: center;
+    @include mix.respond(large-1030) {
+      height: 99px;
+    }
+    @include mix.respond(small-639) {
+      height: 117px;
+      text-align: center;
+    }
   }
 
   &__title {
     @include mix.title(42px);
     color: vars.$white;
     letter-spacing: 0;
+    @include mix.respond(small-639) {
+      font-size: 26px;
+      font-weight: 500;
+    }
   }
 
   &__information {
@@ -36,9 +53,28 @@
     border-bottom: 1px solid vars.$gray;
     padding-left: 120px;
     padding-top: 50px;
+    @include mix.respond(large-1030) {
+      padding-left: 77px;
+    }
+    @include mix.respond(small-639) {
+      height: 47px;
+      padding-left: 46px;
+      padding-top: 20px;
+    }
     &__text {
       @include mix.mainText();
       font-weight: 600;
+      &_second {
+        @include mix.respond(small-639) {
+          margin-left: 14px;
+        }
+      }
+    }
+    &_third {
+      @include mix.respond(small-639) {
+        height: 57px;
+        padding-top: 30px;
+      }
     }
   }
 
@@ -46,6 +82,14 @@
     padding-top: 40px;
     padding-left: 120px;
     padding-bottom: 50px;
+    @include mix.respond(large-1030) {
+      padding-bottom: 40px;
+      padding-right: 77px;
+      padding-left: 77px;
+    }
+    @include mix.respond(small-639) {
+      padding: 30px 10px 50px;
+    }
   }
 
   &__buttons {
@@ -53,16 +97,51 @@
     justify-content: space-between;
     align-items: center;
     padding-right: 120px;
+    @include mix.respond(large-1030) {
+      padding-right: 0;
+      flex-wrap: wrap;
+    }
+    @include mix.respond(small-639) {
+      flex-direction: column-reverse;
+      gap: 0;
+      justify-content: flex-start;
+    }
+    &__top {
+      @include mix.center(55px);
+      @include mix.respond(large-1030) {
+        gap: 0;
+      }
+      @include mix.respond(small-639) {
+        flex-direction: column-reverse;
+        gap: 30px;
+      }
+    }
   }
 
   &__back {
-    @include mix.button(200px, transparent, 0);
-    @include mix.buttonText(vars.$turquoise);
-    padding-left: 70px;
-    justify-content: flex-start;
-    text-decoration: underline;
-    text-transform: none;
-    &:hover {
+    @include mix.button(200px, transparent, 5px);
+    justify-content: center;
+    @include mix.respond(large-1030) {
+      width: 180px;
+      justify-content: flex-start;
+      padding-left: 66px;
+    }
+    @include mix.respond(small-639) {
+      align-items: center;
+      height: 64px;
+    }
+    &__text {
+      @include mix.buttonText(vars.$turquoise);
+      text-decoration: underline;
+      text-transform: none;
+    }
+    &__svg {
+      color: vars.$white;
+    }
+    &:hover .pop-up__back__text {
+      color: vars.$purple;
+    }
+    &:hover .pop-up__back__svg {
       color: vars.$purple;
     }
   }
@@ -70,6 +149,13 @@
   &__next {
     margin-right: 105px;
     @include mix.button(200px, vars.$turquoise, 10px);
+    @include mix.respond(large-1030) {
+      width: 213px;
+      margin-right: 0;
+    }
+    @include mix.respond(small-639) {
+      height: 50px;
+    }
     &__text {
       @include mix.buttonText(vars.$white);
     }
@@ -84,6 +170,18 @@
 
   &__complete {
     @include mix.button(359px, vars.$orange, 10px);
+    @include mix.respond(large-1030) {
+      width: 290px;
+      margin-top: 30px;
+      margin-left: 78px;
+    }
+    @include mix.respond(small-639) {
+      width: 280px;
+      margin-left: 0;
+      margin-top: 20px;
+      height: 50px;
+      order: -1;
+    }
     &__text {
       @include mix.buttonText(vars.$white);
     }
@@ -113,15 +211,26 @@
     flex-direction: column;
     gap: 40px;
     margin-bottom: 50px;
+    @include mix.respond(small-639) {
+      gap: 20px;
+    }
     &__amount {
       display: flex;
       flex-direction: column;
       gap: 10px;
-      @include mix.respond(small-615) {
-        gap: 5px;
+      @include mix.respond(large-1030) {
+        gap: 20px;
+      }
+      @include mix.respond(small-639) {
+        gap: 10px;
       }
       &_text {
         @include mix.mainText();
+        @include mix.respond(small-639) {
+          width: 214px;
+          text-align: center;
+          align-self: center;
+        }
         &_asterix {
           color: vars.$turquoise;
         }
@@ -129,11 +238,46 @@
       &__buttons {
         display: flex;
         gap: 40px;
+        @include mix.respond(large-1030) {
+          flex-wrap: wrap;
+          gap: 20px;
+        }
       }
       &__button {
         @include mix.button(80px, vars.$turquoise-transparent, 0);
         height: 65px;
         @include mix.buttonText(vars.$white);
+        @include mix.respond(large-1030) {
+          width: 135px;
+        }
+        @include mix.respond(small-639) {
+          width: 130px;
+          height: 50px;
+        }
+        &:nth-child(4) {
+          @include mix.respond(large-1030) {
+            margin-top: 20px;
+          }
+          @include mix.respond(small-639) {
+            margin-top: 0;
+          }
+        }
+        &:nth-child(5) {
+          @include mix.respond(large-1030) {
+            margin-top: 20px;
+          }
+          @include mix.respond(small-639) {
+            margin-top: 0;
+          }
+        }
+        &:nth-child(6) {
+          @include mix.respond(large-1030) {
+            margin-top: 20px;
+          }
+          @include mix.respond(small-639) {
+            margin-top: 0;
+          }
+        }
         &:hover {
           box-shadow: 0 4px 30px rgba(0, 160, 146, 0.3);
           background-color: vars.$turquoise-black;
@@ -144,13 +288,28 @@
       display: flex;
       gap: 40px;
       position: relative;
+      @include mix.respond(large-1030) {
+        gap: 21px;
+      }
       &__button {
         @include mix.button(200px, vars.$turquoise, 0);
         height: 65px;
         @include mix.buttonText(vars.$white);
+        @include mix.respond(large-1030) {
+          width: 212px;
+        }
+        @include mix.respond(small-639) {
+          width: 130px;
+          height: 50px;
+        }
         &:hover {
           box-shadow: 0 4px 30px rgba(0, 160, 146, 0.3);
           background-color: vars.$turquoise-black;
+        }
+        &_hidden {
+          @include mix.respond(small-639) {
+            display: none;
+          }
         }
       }
       &__error {
@@ -158,20 +317,46 @@
       }
       &__input {
         width: 200px;
+        @include mix.respond(large-1030) {
+          width: 213px;
+        }
+        @include mix.respond(small-639) {
+          width: 130px;
+          height: 50px;
+        }
       }
     }
     &__special {
       display: flex;
       gap: 40px;
+      @include mix.respond(large-1030) {
+        gap: 20px;
+        flex-direction: column;
+        margin-top: 9px;
+      }
+      @include mix.respond(small-639) {
+        margin-top: 10px;
+      }
       &__button {
         @include mix.button(200px, vars.$turquoise-transparent, 0);
         height: 65px;
         @include mix.buttonText(vars.$white);
         cursor: auto;
+        @include mix.respond(large-1030) {
+          width: 211px;
+        }
+        @include mix.respond(small-639) {
+          width: 209px;
+          height: 50px;
+          align-self: center;
+        }
       }
     }
     &__gift {
       position: relative;
+      @include mix.respond(small-639) {
+        margin-top: 8px;
+      }
     }
   }
 
@@ -180,6 +365,12 @@
     flex-direction: column;
     gap: 51px;
     margin-bottom: 50px;
+    @include mix.respond(large-1030) {
+      gap: 39px;
+    }
+    @include mix.respond(small-639) {
+      gap: 30px;
+    }
   }
 
   &__third {
@@ -187,9 +378,28 @@
     flex-direction: column;
     gap: 50px;
     margin-bottom: 100px;
+    @include mix.respond(large-1030) {
+      gap: 40px;
+      margin-bottom: 50px;
+    }
+    @include mix.respond(small-639) {
+      gap: 30px;
+      margin-bottom: 30px;
+    }
     &__section {
       display: flex;
       gap: 40px;
+      @include mix.respond(large-1030) {
+        gap: 20px;
+      }
+      &_top {
+        @include mix.respond(large-1030) {
+          flex-direction: column;
+        }
+      }
+      @include mix.respond(small-639) {
+        gap: 30px;
+      }
     }
   }
 
@@ -198,7 +408,7 @@
     flex-direction: column;
     gap: 10px;
     position: relative;
-    @include mix.respond(small-615) {
+    @include mix.respond(small-639) {
       gap: 5px;
     }
     &_text {
@@ -208,6 +418,15 @@
       }
       &_note {
         width: 680px;
+        @include mix.respond(large-1030) {
+          width: 446px;
+          margin-top: 10px;
+        }
+        @include mix.respond(small-639) {
+          width: 280px;
+          margin-top: 5px;
+          font-size: 16px;
+        }
       }
     }
   }
@@ -216,6 +435,9 @@
     border: 1px solid vars.$black;
     border-radius: vars.$border-radius;
     padding-left: 20px;
+    @include mix.respond(small-639) {
+      padding-left: 10px;
+    }
     @include mix.mainText();
     &::placeholder {
       margin: 0;
@@ -238,14 +460,35 @@
     &_second {
       width: 680px;
       height: 60px;
+      @include mix.respond(large-1030) {
+        width: 446px;
+      }
+      @include mix.respond(small-639) {
+        width: 280px;
+        height: 50px;
+      }
     }
     &_card {
       width: 442px;
       height: 65px;
+      @include mix.respond(large-1030) {
+        width: 445px;
+      }
+      @include mix.respond(small-639) {
+        width: 280px;
+        height: 50px;
+      }
     }
     &_cvv {
       width: 198px;
       height: 65px;
+      @include mix.respond(large-1030) {
+        width: 212px;
+      }
+      @include mix.respond(small-639) {
+        width: 280px;
+        height: 50px;
+      }
     }
   }
 
@@ -255,6 +498,9 @@
     position: absolute;
     display: none;
     top: 105%;
+    &_email {
+      top: 57%;
+    }
   }
 
   &__checkbox {
@@ -264,15 +510,28 @@
     &__state {
       display: flex;
       gap: 20px;
+      @include mix.respond(small-639) {
+        flex-direction: column-reverse;
+        gap: 5px;
+      }
     }
     &__control {
       cursor: pointer;
       width: 30px;
       height: 30px;
       border: 1px solid vars.$black;
+      @include mix.respond(small-639) {
+        align-self: center;
+      }
     }
     &__title {
       @include mix.mainText();
+      @include mix.respond(small-639) {
+        width: 239px;
+        text-align: center;
+        align-self: center;
+        font-size: 16px;
+      }
     }
     &:checked ~ .pop-up__checkbox__state .pop-up__checkbox__control {
       background-color: vars.$turquoise;
@@ -297,13 +556,38 @@
         border-bottom-left-radius: vars.$border-radius;
         @include mix.center(0);
         justify-content: center;
-        @include  mix.mainText();
+        @include mix.mainText();
         color: vars.$gray;
+        &_favorite {
+          @include mix.respond(large-1030) {
+            width: 416px;
+          }
+          @include mix.respond(small-639) {
+            width: 247px;
+            height: 50px;
+            justify-content: flex-start;
+            padding-left: 10px;
+          }
+        }
         &_month {
           width: 169px;
+          @include mix.respond(large-1030) {
+            width: 180px;
+          }
+          @include mix.respond(small-639) {
+            height: 50px;
+            justify-content: flex-start;
+            padding-left: 10px;
+          }
         }
         &_year {
           width: 169px;
+          @include mix.respond(large-1030) {
+            width: 180px;
+          }
+          @include mix.respond(small-639) {
+            display: none;
+          }
         }
       }
       &__arrow {
@@ -318,6 +602,20 @@
         border-top: 1px solid vars.$black;
         @include mix.center(0);
         justify-content: center;
+        @include mix.respond(small-639) {
+          width: 33px;
+          height: 50px;
+        }
+        &_month {
+          @include mix.respond(small-639) {
+            width: 30px;
+          }
+        }
+        &_year {
+          @include mix.respond(small-639) {
+            display: none;
+          }
+        }
       }
     }
     &__list {
@@ -337,6 +635,9 @@
       gap: 10px;
       overflow-y: auto;
       max-height: 150px;
+      @include mix.respond(large-1030) {
+        width: 445px;
+      }
       &::-webkit-scrollbar {
         width: 32px;
       }
@@ -377,16 +678,29 @@
         top: 305%;
         &_month {
           left: 87.5%;
+          @include mix.respond(small-639) {
+            top: 370%;
+          }
         }
         &_year {
           left: 87.5%;
         }
       }
+
       &_month {
         width: 201px;
+        @include mix.respond(large-1030) {
+          width: 212px;
+        }
+        @include mix.respond(small-639) {
+          width: 210px;
+        }
       }
       &_year {
         width: 201px;
+        @include mix.respond(large-1030) {
+          width: 212px;
+        }
       }
     }
   }
