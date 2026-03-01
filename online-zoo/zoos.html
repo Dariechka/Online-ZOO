@@ -9,274 +9,304 @@
   </head>
   <body>
     <div class="background"></div>
-    <header>
-      <div class="container header__container">
-        <h1 class="header__title">
-          <svg viewBox="0 0 96 50" class="header__title__svg">
-            <use href="/icon.svg#logo"></use>
-          </svg>
-          <span class="header__hidden">online-zoo</span>
-        </h1>
-        <button class="header__burger-menu">
-          <span class="header__burger-menu_line"></span>
-          <span class="header__burger-menu_line"></span>
-          <span class="header__burger-menu_line"></span>
-          <span class="header__burger-menu_line_cross"></span>
-          <span class="header__burger-menu_line_cross"></span>
-        </button>
-        <div class="header__right-block">
-          <nav class="header__navigation">
-            <a href="./index.html" class="header__navigation_item">About</a>
-            <a href="./map.html" class="header__navigation_item">Map</a>
-            <a href="#" class="header__navigation_item header__navigation_item_active">Zoos</a>
-            <a href="./contact.html" class="header__navigation_item">Contact us</a>
-            <a
-              href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=0-1&p=f"
-              class="header__navigation_item"
-              >Design</a
-            >
-          </nav>
-          <nav class="header__social">
-            <a href="https://www.youtube.com/@rsschool" class="header__social_item">
-              <img src="/images/youtube.png" alt="Youtube link" />
-            </a>
-            <a href="https://www.instagram.com/rsschool_en?igsh=em1janI5bzZ0dXlx" class="header__social_item">
-              <img src="/images/instagram.png" alt="Instagram link" />
-            </a>
-            <a
-              href="https://www.facebook.com/EPAM.Poland?mibextid=wwXIfr&rdid=72lEr0PoAQALGAC2&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18JdV47Fxn%2F%3Fmibextid%3DwwXIfr"
-              class="header__social_item"
-            >
-              <img src="/images/facebook.png" alt="Facebook link" />
-            </a>
-          </nav>
+    <div class="sticky-container">
+      <header>
+        <div class="container header__container">
+          <h1 class="header__title">
+            <svg viewBox="0 0 96 50" class="header__title__svg">
+              <use href="/icon.svg#logo"></use>
+            </svg>
+            <span class="header__hidden">online-zoo</span>
+          </h1>
+          <button class="header__burger-menu">
+            <span class="header__burger-menu_line"></span>
+            <span class="header__burger-menu_line"></span>
+            <span class="header__burger-menu_line"></span>
+            <span class="header__burger-menu_line_cross"></span>
+            <span class="header__burger-menu_line_cross"></span>
+          </button>
+          <div class="header__right-block">
+            <nav class="header__navigation">
+              <a href="./index.html" class="header__navigation_item">About</a>
+              <a href="./map.html" class="header__navigation_item">Map</a>
+              <a href="#" class="header__navigation_item header__navigation_item_active">Zoos</a>
+              <a href="./contact.html" class="header__navigation_item">Contact us</a>
+              <a
+                href="https://www.figma.com/design/lnK11foY8Aoa6oOlDXovVN/Online-ZOO-Project?node-id=0-1&p=f"
+                class="header__navigation_item"
+                >Design</a
+              >
+            </nav>
+            <nav class="header__social">
+              <a href="https://www.youtube.com/@rsschool" class="header__social_item">
+                <img src="/images/youtube.png" alt="Youtube link" />
+              </a>
+              <a href="https://www.instagram.com/rsschool_en?igsh=em1janI5bzZ0dXlx" class="header__social_item">
+                <img src="/images/instagram.png" alt="Instagram link" />
+              </a>
+              <a
+                href="https://www.facebook.com/EPAM.Poland?mibextid=wwXIfr&rdid=72lEr0PoAQALGAC2&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18JdV47Fxn%2F%3Fmibextid%3DwwXIfr"
+                class="header__social_item"
+              >
+                <img src="/images/facebook.png" alt="Facebook link" />
+              </a>
+            </nav>
+          </div>
         </div>
-      </div>
-    </header>
-    <main>
-      <section class="container camera__container">
-        <div class="camera__top">
-          <p class="camera__top__title"></p>
-          <button class="camera__button donate-pop-up">
+      </header>
+      <section class="panel">
+        <div class="panel__bage">
+          <span class="panel__bage__text">LIVE</span>
+          <svg width="20" height="20" viewBox="0 0 20 20">
+            <use href="/icon.svg#camera"></use>
+          </svg>
+        </div>
+        <div class="panel__top">
+          <svg width="16" height="15" viewBox="0 0 16 15" class="panel__svg">
+            <use href="/icon.svg#panel-right"></use>
+          </svg>
+        </div>
+        <div class="panel__animal">
+          <svg width="120" height="120" viewBox="0 0 120 120" class="panel__animal__border">
+            <use href="/icon.svg#circle"></use>
+          </svg>
+          <div class="panel__animal__circle">
+            <svg viewBox="0 0 59 44" class="panel__animal__panda">
+              <use href="/icon.svg#panda"></use>
+            </svg>
+          </div>
+        </div>
+        <div class="panel__bottom">
+          <svg width="15" height="9" viewBox="0 0 15 9" class="panel__svg">
+            <use href="/icon.svg#panel-scroll"></use>
+          </svg>
+        </div>
+      </section>
+      <main class="zoos-main">
+        <section class="container camera__container">
+          <div class="camera__top">
+            <p class="camera__top__title"></p>
+            <button class="camera__button donate-pop-up">
+              <span class="camera__button__text">donate now</span>
+              <svg width="25" height="22" viewBox="0 0 25 22">
+                <use href="/icon.svg#arrow" class="camera__button__svg"></use>
+              </svg>
+            </button>
+          </div>
+          <div class="camera__main-video">
+            <iframe
+              src="https://www.youtube.com/embed/pb-j3svRQLI?si=iLvjN72g-_VnoFw0"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <button class="camera__button camera__button_hidden donate-pop-up">
             <span class="camera__button__text">donate now</span>
             <svg width="25" height="22" viewBox="0 0 25 22">
               <use href="/icon.svg#arrow" class="camera__button__svg"></use>
             </svg>
           </button>
-        </div>
-        <div class="camera__main-video">
-          <iframe
-            src="https://www.youtube.com/embed/pb-j3svRQLI?si=iLvjN72g-_VnoFw0"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          >
-          </iframe>
-        </div>
-        <button class="camera__button camera__button_hidden donate-pop-up">
-          <span class="camera__button__text">donate now</span>
-          <svg width="25" height="22" viewBox="0 0 25 22">
-            <use href="/icon.svg#arrow" class="camera__button__svg"></use>
-          </svg>
-        </button>
-        <div class="camera__slider">
-          <h3 class="camera__slider__title">more live views</h3>
-          <div class="camera__slider__wrapper">
-            <button class="camera__slider__button">
-              <svg width="25" height="22" viewBox="0 0 25 22">
-                <use href="/icon.svg#arrow-left" class="camera__slider__button__svg"></use>
-              </svg>
-            </button>
-            <div class="camera__slider__ribbon">
-              <div class="camera__slider__video">
-                <iframe
-                  src="https://www.youtube.com/embed/oRDRfikj2z8?si=1g5Yy0epU_JxQYvx"
-                  title="YouTube video player"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                    web-share;
-                  "
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                >
-                </iframe>
+          <div class="camera__slider">
+            <h2 class="camera__slider__title">more live views</h2>
+            <div class="camera__slider__wrapper">
+              <button class="camera__slider__button">
+                <svg width="25" height="22" viewBox="0 0 25 22">
+                  <use href="/icon.svg#arrow-left" class="camera__slider__button__svg"></use>
+                </svg>
+              </button>
+              <div class="camera__slider__ribbon">
+                <div class="camera__slider__video">
+                  <iframe
+                    src="https://www.youtube.com/embed/oRDRfikj2z8?si=1g5Yy0epU_JxQYvx"
+                    title="YouTube video player"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+                <div class="camera__slider__video">
+                  <iframe
+                    src="https://www.youtube.com/embed/o50N3-OaGdM?si=cXS2GVgfWM-hIKTd"
+                    title="YouTube video player"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
+                <div class="camera__slider__video">
+                  <iframe
+                    src="https://www.youtube.com/embed/x5OtCngO5A4?si=tkqk75MEBPVC2GHd"
+                    title="YouTube video player"
+                    allow="
+                      accelerometer;
+                      autoplay;
+                      clipboard-write;
+                      encrypted-media;
+                      gyroscope;
+                      picture-in-picture;
+                      web-share;
+                    "
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                  >
+                  </iframe>
+                </div>
               </div>
-              <div class="camera__slider__video">
-                <iframe
-                  src="https://www.youtube.com/embed/o50N3-OaGdM?si=cXS2GVgfWM-hIKTd"
-                  title="YouTube video player"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                    web-share;
-                  "
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                >
-                </iframe>
-              </div>
-              <div class="camera__slider__video">
-                <iframe
-                  src="https://www.youtube.com/embed/x5OtCngO5A4?si=tkqk75MEBPVC2GHd"
-                  title="YouTube video player"
-                  allow="
-                    accelerometer;
-                    autoplay;
-                    clipboard-write;
-                    encrypted-media;
-                    gyroscope;
-                    picture-in-picture;
-                    web-share;
-                  "
-                  referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                >
-                </iframe>
-              </div>
+              <button class="camera__slider__button">
+                <svg width="25" height="22" viewBox="0 0 25 22">
+                  <use href="/icon.svg#arrow" class="camera__slider__button__svg"></use>
+                </svg>
+              </button>
             </div>
-            <button class="camera__slider__button">
-              <svg width="25" height="22" viewBox="0 0 25 22">
-                <use href="/icon.svg#arrow" class="camera__slider__button__svg"></use>
-              </svg>
+          </div>
+          <button class="camera__button camera__button_hidden_hidden donate-pop-up">
+            <span class="camera__button__text">donate now</span>
+            <svg width="25" height="22" viewBox="0 0 25 22">
+              <use href="/icon.svg#arrow" class="camera__button__svg"></use>
+            </svg>
+          </button>
+        </section>
+        <section class="container camera__donation">
+          <div class="camera__donation__text-info">
+            <p class="camera__donation__text-info__title"></p>
+            <p class="camera__donation__text-info__text"></p>
+          </div>
+          <div class="donation__donate">
+            <h2 class="donation__donate__title camera__donation__title">Quick Donate</h2>
+            <button class="donation__donate__button camera__donation__button donate-pop-up">
+              <span class="donation__donate__button__text">$ Donation Amount</span>
+              <span class="donation__donate__button__btn">
+                <svg width="25" height="22" viewBox="0 0 25 22">
+                  <use href="/icon.svg#arrow" class="donation__donate__button__svg"></use>
+                </svg>
+              </span>
             </button>
           </div>
-        </div>
-        <button class="camera__button camera__button_hidden_hidden donate-pop-up">
-          <span class="camera__button__text">donate now</span>
-          <svg width="25" height="22" viewBox="0 0 25 22">
-            <use href="/icon.svg#arrow" class="camera__button__svg"></use>
-          </svg>
-        </button>
-      </section>
-      <section class="container camera__donation">
-        <div class="camera__donation__text-info">
-          <p class="camera__donation__text-info__title"></p>
-          <p class="camera__donation__text-info__text"></p>
-        </div>
-        <div class="donation__donate">
-          <h4 class="donation__donate__title camera__donation__title">Quick Donate</h4>
-          <button class="donation__donate__button camera__donation__button donate-pop-up">
-            <span class="donation__donate__button__text">$ Donation Amount</span>
-            <span class="donation__donate__button__btn">
-              <svg width="25" height="22" viewBox="0 0 25 22">
-                <use href="/icon.svg#arrow" class="donation__donate__button__svg"></use>
+        </section>
+        <section class="container know__container">
+          <div class="know__info">
+            <h3 class="know__info__title">did you know?</h3>
+            <p class="know__info__text"></p>
+          </div>
+          <div class="know__info-wrapper">
+            <div class="know__list">
+              <div class="know__list__item">
+                <span class="know__list__item_label">Common name:</span>
+                <span class="know__list__item_value commonName"></span>
+              </div>
+              <div class="know__list__item">
+                <span class="know__list__item_label">Scientific name:</span>
+                <span class="know__list__item_value scientificName"></span>
+              </div>
+              <div class="know__list__item">
+                <span class="know__list__item_label">Type:</span>
+                <span class="know__list__item_value type"></span>
+              </div>
+              <div class="know__list__item">
+                <span class="know__list__item_label">Size:</span>
+                <span class="know__list__item_value size"></span>
+              </div>
+              <div class="know__list__item">
+                <span class="know__list__item_label">Diet:</span>
+                <span class="know__list__item_value diet"></span>
+              </div>
+              <div class="know__list__item">
+                <span class="know__list__item_label">Habitat:</span>
+                <span class="know__list__item_value habitat"></span>
+              </div>
+              <div class="know__list__item">
+                <span class="know__list__item_label">Range:</span>
+                <span class="know__list__item_value range"></span>
+              </div>
+              <a href="./map.html" class="know__list__item_link">
+                <span>VIEW map</span>
+                <svg width="25" height="22" viewBox="0 0 25 22">
+                  <use href="/icon.svg#arrow" class="know__list__item_link_svg"></use>
+                </svg>
+              </a>
+            </div>
+            <div class="know__image">
+              <img class="know__image__img" src="/images/panda_Page.png" alt="animal" />
+            </div>
+          </div>
+          <p class="know__text"></p>
+        </section>
+      </main>
+      <footer class="container footer__container">
+        <div class="footer__top">
+          <div class="footer__top__icons">
+            <h2 class="footer__top__title">
+              <svg viewBox="0 0 96 50" class="footer__top__title__svg">
+                <use href="/icon.svg#logo"></use>
               </svg>
-            </span>
+              <span class="footer__top__title__svg__hidden">online-zoo</span>
+            </h2>
+            <svg width="50" height="50" viewBox="0 0 50 50" class="footer__top__title__m">
+              <use href="/icon.svg#m"></use>
+            </svg>
+            <svg width="138" height="52" viewBox="0 0 138 52" class="footer__top__title__school">
+              <use href="/icon.svg#school"></use>
+            </svg>
+          </div>
+          <nav class="footer__navigation">
+            <a href="#" class="footer__navigation_item">About</a>
+            <a href="./map.html" class="footer__navigation_item">Map</a>
+            <a href="./zoos.html" class="footer__navigation_item">Zoos</a>
+            <a href="./contact.html" class="footer__navigation_item">Contact us</a>
+          </nav>
+          <button class="footer__button">
+            <span class="footer__button__text">Donate for volunteers</span>
+            <svg width="25" height="22" viewBox="0 0 25 22">
+              <use href="/icon.svg#arrow" class="footer__button__svg"></use>
+            </svg>
           </button>
         </div>
-      </section>
-      <section class="container know__container">
-        <div class="know__info">
-          <h3 class="know__info__title">did you know?</h3>
-          <p class="know__info__text"></p>
-        </div>
-        <div class="know__info-wrapper">
-          <div class="know__list">
-            <div class="know__list__item">
-              <span class="know__list__item_label">Common name:</span>
-              <span class="know__list__item_value commonName"></span>
-            </div>
-            <div class="know__list__item">
-              <span class="know__list__item_label">Scientific name:</span>
-              <span class="know__list__item_value scientificName"></span>
-            </div>
-            <div class="know__list__item">
-              <span class="know__list__item_label">Type:</span>
-              <span class="know__list__item_value type"></span>
-            </div>
-            <div class="know__list__item">
-              <span class="know__list__item_label">Size:</span>
-              <span class="know__list__item_value size"></span>
-            </div>
-            <div class="know__list__item">
-              <span class="know__list__item_label">Diet:</span>
-              <span class="know__list__item_value diet"></span>
-            </div>
-            <div class="know__list__item">
-              <span class="know__list__item_label">Habitat:</span>
-              <span class="know__list__item_value habitat"></span>
-            </div>
-            <div class="know__list__item">
-              <span class="know__list__item_label">Range:</span>
-              <span class="know__list__item_value range"></span>
-            </div>
-            <a href="./map.html" class="know__list__item_link">
-              <span>VIEW map</span>
-              <svg width="25" height="22" viewBox="0 0 25 22">
-                <use href="/icon.svg#arrow" class="know__list__item_link_svg"></use>
-              </svg>
+        <div class="footer__line"></div>
+        <div class="footer__bottom">
+          <div class="footer__bottom__quotes">
+            <h3 class="footer__bottom__quotes__text">© 2021 DinaK</h3>
+            <h3 class="footer__bottom__quotes__text">© Yem Digital</h3>
+            <h3 class="footer__bottom__quotes__text">© RSSchool</h3>
+          </div>
+          <div class="footer__line footer__line_hidden"></div>
+          <nav class="footer__social">
+            <a href="https://www.youtube.com/@rsschool" class="footer__social_item">
+              <img src="/images/youtube.png" alt="Youtube link" />
             </a>
-          </div>
-          <div class="know__image">
-            <img class="know__image__img" src="/images/panda_Page.png" alt="animal" />
-          </div>
+            <a href="https://www.instagram.com/rsschool_en?igsh=em1janI5bzZ0dXlx" class="footer__social_item">
+              <img src="/images/instagram.png" alt="Instagram link" />
+            </a>
+            <a
+              href="https://www.facebook.com/EPAM.Poland?mibextid=wwXIfr&rdid=72lEr0PoAQALGAC2&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18JdV47Fxn%2F%3Fmibextid%3DwwXIfr"
+              class="footer__social_item"
+            >
+              <img src="/images/facebook.png" alt="Facebook link" />
+            </a>
+          </nav>
         </div>
-        <p class="know__text"></p>
-      </section>
-    </main>
-    <footer class="container footer__container">
-      <div class="footer__top">
-        <div class="footer__top__icons">
-          <h2 class="footer__top__title">
-            <svg viewBox="0 0 96 50" class="footer__top__title__svg">
-              <use href="/icon.svg#logo"></use>
-            </svg>
-            <span class="footer__top__title__svg__hidden">online-zoo</span>
-          </h2>
-          <svg width="50" height="50" viewBox="0 0 50 50" class="footer__top__title__m">
-            <use href="/icon.svg#m"></use>
-          </svg>
-          <svg width="138" height="52" viewBox="0 0 138 52" class="footer__top__title__school">
-            <use href="/icon.svg#school"></use>
-          </svg>
-        </div>
-        <nav class="footer__navigation">
-          <a href="#" class="footer__navigation_item">About</a>
-          <a href="./map.html" class="footer__navigation_item">Map</a>
-          <a href="./zoos.html" class="footer__navigation_item">Zoos</a>
-          <a href="./contact.html" class="footer__navigation_item">Contact us</a>
-        </nav>
-        <button class="footer__button">
-          <span class="footer__button__text">Donate for volunteers</span>
-          <svg width="25" height="22" viewBox="0 0 25 22">
-            <use href="/icon.svg#arrow" class="footer__button__svg"></use>
-          </svg>
-        </button>
-      </div>
-      <div class="footer__line"></div>
-      <div class="footer__bottom">
-        <div class="footer__bottom__quotes">
-          <h3 class="footer__bottom__quotes__text">© 2021 DinaK</h3>
-          <h3 class="footer__bottom__quotes__text">© Yem Digital</h3>
-          <h3 class="footer__bottom__quotes__text">© RSSchool</h3>
-        </div>
-        <div class="footer__line footer__line_hidden"></div>
-        <nav class="footer__social">
-          <a href="https://www.youtube.com/@rsschool" class="footer__social_item">
-            <img src="/images/youtube.png" alt="Youtube link" />
-          </a>
-          <a href="https://www.instagram.com/rsschool_en?igsh=em1janI5bzZ0dXlx" class="footer__social_item">
-            <img src="/images/instagram.png" alt="Instagram link" />
-          </a>
-          <a
-            href="https://www.facebook.com/EPAM.Poland?mibextid=wwXIfr&rdid=72lEr0PoAQALGAC2&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18JdV47Fxn%2F%3Fmibextid%3DwwXIfr"
-            class="footer__social_item"
-          >
-            <img src="/images/facebook.png" alt="Facebook link" />
-          </a>
-        </nav>
-      </div>
-    </footer>
+      </footer>
+    </div>
     <script type="module" src="/src/main.js"></script>
     <script type="module" src="/src/features/burger-menu.js"></script>
     <script type="module" src="/src/features/modal.js"></script>
