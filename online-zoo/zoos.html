@@ -56,7 +56,7 @@
     <main>
       <section class="container camera__container">
         <div class="camera__top">
-          <h2 class="camera__top__title"></h2>
+          <p class="camera__top__title"></p>
           <button class="camera__button donate-pop-up">
             <span class="camera__button__text">donate now</span>
             <svg width="25" height="22" viewBox="0 0 25 22">
@@ -66,13 +66,20 @@
         </div>
         <div class="camera__main-video">
           <iframe
-              src="https://www.youtube.com/embed/pb-j3svRQLI?si=iLvjN72g-_VnoFw0"
-              title="YouTube video player"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen>
+            src="https://www.youtube.com/embed/pb-j3svRQLI?si=iLvjN72g-_VnoFw0"
+            title="YouTube video player"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          >
           </iframe>
         </div>
+        <button class="camera__button camera__button_hidden donate-pop-up">
+          <span class="camera__button__text">donate now</span>
+          <svg width="25" height="22" viewBox="0 0 25 22">
+            <use href="/icon.svg#arrow" class="camera__button__svg"></use>
+          </svg>
+        </button>
         <div class="camera__slider">
           <h3 class="camera__slider__title">more live views</h3>
           <div class="camera__slider__wrapper">
@@ -83,28 +90,57 @@
             </button>
             <div class="camera__slider__ribbon">
               <div class="camera__slider__video">
-                <iframe src="https://www.youtube.com/embed/oRDRfikj2z8?si=1g5Yy0epU_JxQYvx"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
+                <iframe
+                  src="https://www.youtube.com/embed/oRDRfikj2z8?si=1g5Yy0epU_JxQYvx"
+                  title="YouTube video player"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
                 </iframe>
               </div>
               <div class="camera__slider__video">
-                <iframe src="https://www.youtube.com/embed/o50N3-OaGdM?si=cXS2GVgfWM-hIKTd"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
-
+                <iframe
+                  src="https://www.youtube.com/embed/o50N3-OaGdM?si=cXS2GVgfWM-hIKTd"
+                  title="YouTube video player"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
                 </iframe>
               </div>
               <div class="camera__slider__video">
-                <iframe src="https://www.youtube.com/embed/x5OtCngO5A4?si=tkqk75MEBPVC2GHd"
-                        title="YouTube video player"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
+                <iframe
+                  src="https://www.youtube.com/embed/x5OtCngO5A4?si=tkqk75MEBPVC2GHd"
+                  title="YouTube video player"
+                  allow="
+                    accelerometer;
+                    autoplay;
+                    clipboard-write;
+                    encrypted-media;
+                    gyroscope;
+                    picture-in-picture;
+                    web-share;
+                  "
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                >
                 </iframe>
               </div>
             </div>
@@ -115,15 +151,21 @@
             </button>
           </div>
         </div>
+        <button class="camera__button camera__button_hidden_hidden donate-pop-up">
+          <span class="camera__button__text">donate now</span>
+          <svg width="25" height="22" viewBox="0 0 25 22">
+            <use href="/icon.svg#arrow" class="camera__button__svg"></use>
+          </svg>
+        </button>
       </section>
-      <section class="container donation__container camera__donation">
-        <div class="donation__text-info">
-          <h3 class="donation__text-info__title"></h3>
-          <p class="donation__text-info__text"></p>
+      <section class="container camera__donation">
+        <div class="camera__donation__text-info">
+          <p class="camera__donation__text-info__title"></p>
+          <p class="camera__donation__text-info__text"></p>
         </div>
         <div class="donation__donate">
-          <h4 class="donation__donate__title">Quick Donate</h4>
-          <button class="donation__donate__button donate-pop-up">
+          <h4 class="donation__donate__title camera__donation__title">Quick Donate</h4>
+          <button class="donation__donate__button camera__donation__button donate-pop-up">
             <span class="donation__donate__button__text">$ Donation Amount</span>
             <span class="donation__donate__button__btn">
               <svg width="25" height="22" viewBox="0 0 25 22">
@@ -175,7 +217,7 @@
               </svg>
             </a>
           </div>
-          <div  class="know__image">
+          <div class="know__image">
             <img class="know__image__img" src="/images/panda_Page.png" alt="animal" />
           </div>
         </div>
@@ -241,9 +283,9 @@
     <script type="module" src="/src/features/pop-up.js"></script>
     <script type="module" src="/src/features/zoos.js"></script>
     <script type="module">
-        import zoos from '/src/features/zoos.js';
-        const params = new URLSearchParams(window.location.search);
-        zoos(params.get('animal'));
+      import zoos from '/src/features/zoos.js'
+      const params = new URLSearchParams(window.location.search)
+      zoos(params.get('animal'))
     </script>
   </body>
 </html>

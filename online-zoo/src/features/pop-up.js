@@ -194,13 +194,13 @@ const background = document.querySelector('.background')
 const buttons = document.querySelectorAll('.donate-pop-up')
 
 for (let button of buttons) {
-    button.addEventListener('click', () => {
-        body.classList.add('no-scroll')
-        background.style.display = 'block'
+  button.addEventListener('click', () => {
+    body.classList.add('no-scroll')
+    background.style.display = 'block'
 
-        body.insertAdjacentHTML(
-            `afterbegin`,
-            `<div class="pop-up">
+    body.insertAdjacentHTML(
+      `afterbegin`,
+      `<div class="pop-up">
   <div class="pop-up__header">
     <h2 class="pop-up__title">make your donation</h2>
   </div>
@@ -239,181 +239,181 @@ for (let button of buttons) {
     </div>
   </div>
 </div>`
-        )
+    )
 
-        const popUp = document.querySelector('.pop-up')
-        const nextButton = document.querySelector('.pop-up__next')
-        const backButton = document.querySelector('.pop-up__back')
-        const complete = document.querySelector('.pop-up__complete')
-        const dynamicContainer = document.querySelector('.pop-up__dynamic')
-        const information = document.querySelector('.pop-up__information__text')
-        const pointsContainer = document.querySelector('.pop-up__points')
-        const infoText = document.querySelector('.pop-up__information__text')
-        const infoContainer = document.querySelector('.pop-up__information')
+    const popUp = document.querySelector('.pop-up')
+    const nextButton = document.querySelector('.pop-up__next')
+    const backButton = document.querySelector('.pop-up__back')
+    const complete = document.querySelector('.pop-up__complete')
+    const dynamicContainer = document.querySelector('.pop-up__dynamic')
+    const information = document.querySelector('.pop-up__information__text')
+    const pointsContainer = document.querySelector('.pop-up__points')
+    const infoText = document.querySelector('.pop-up__information__text')
+    const infoContainer = document.querySelector('.pop-up__information')
 
-        function changText() {
-            information.textContent = `${popUpData[step - 1].info} Information:`
-        }
+    function changText() {
+      information.textContent = `${popUpData[step - 1].info} Information:`
+    }
 
-        function renderContent() {
-            for (let child of dynamicContainer.children) {
-                child.remove()
-            }
-            dynamicContainer.insertAdjacentHTML(`afterbegin`, popUpData[step - 1].html)
-        }
+    function renderContent() {
+      for (let child of dynamicContainer.children) {
+        child.remove()
+      }
+      dynamicContainer.insertAdjacentHTML(`afterbegin`, popUpData[step - 1].html)
+    }
 
-        function fillPoints() {
-            ;[...pointsContainer.children].forEach((point, index) => {
-                index <= step - 1 ? point.classList.add('fill') : point.classList.remove('fill')
-            })
-        }
+    function fillPoints() {
+      ;[...pointsContainer.children].forEach((point, index) => {
+        index <= step - 1 ? point.classList.add('fill') : point.classList.remove('fill')
+      })
+    }
 
-        function closePopUp() {
-            popUp.remove()
-            body.classList.remove('no-scroll')
-            background.style.display = 'none'
-        }
+    function closePopUp() {
+      popUp.remove()
+      body.classList.remove('no-scroll')
+      background.style.display = 'none'
+    }
 
-        function fixInfoText() {
-            infoText.classList.remove('pop-up__information__text_second')
-            infoContainer.classList.remove('pop-up__information_third')
-            if (step === 2) {
-                infoText.classList.add('pop-up__information__text_second')
-            }
-            if (step === 3) {
-                infoContainer.classList.add('pop-up__information_third')
-            }
-        }
+    function fixInfoText() {
+      infoText.classList.remove('pop-up__information__text_second')
+      infoContainer.classList.remove('pop-up__information_third')
+      if (step === 2) {
+        infoText.classList.add('pop-up__information__text_second')
+      }
+      if (step === 3) {
+        infoContainer.classList.add('pop-up__information_third')
+      }
+    }
 
-        function modalsLogic() {
-            if (step === 1) {
-                const selectListFavorite = document.querySelector('.pop-up__select__list_favorite')
-                const arrowButtonFavorite = document.querySelector('.pop-up__select__header__arrow_favorite')
-                const inputFavorite = document.querySelector('.pop-up__select__header__input_favorite')
-                const topArrowFavorite = document.querySelector('.pop-up__select__list__arrow-top_favorite')
-                const bottomArrowFavorite = document.querySelector('.pop-up__select__list__arrow-bottom_favorite')
+    function modalsLogic() {
+      if (step === 1) {
+        const selectListFavorite = document.querySelector('.pop-up__select__list_favorite')
+        const arrowButtonFavorite = document.querySelector('.pop-up__select__header__arrow_favorite')
+        const inputFavorite = document.querySelector('.pop-up__select__header__input_favorite')
+        const topArrowFavorite = document.querySelector('.pop-up__select__list__arrow-top_favorite')
+        const bottomArrowFavorite = document.querySelector('.pop-up__select__list__arrow-bottom_favorite')
 
-                arrowButtonFavorite.addEventListener('click', () => {
-                    selectListFavorite.classList.toggle('hidden')
-                    topArrowFavorite.classList.toggle('hidden')
-                    bottomArrowFavorite.classList.toggle('hidden')
-                })
-
-                for (let child of selectListFavorite.children) {
-                    child.addEventListener('click', () => {
-                        inputFavorite.textContent = child.textContent
-                        selectListFavorite.classList.add('hidden')
-                        topArrowFavorite.classList.add('hidden')
-                        bottomArrowFavorite.classList.add('hidden')
-                    })
-                }
-                popUp.addEventListener('click', (event) => {
-                    if (arrowButtonFavorite.contains(event.target)) return
-                    selectListFavorite.classList.add('hidden')
-                    topArrowFavorite.classList.add('hidden')
-                    bottomArrowFavorite.classList.add('hidden')
-                })
-            } else if (step === 3) {
-                const selectListMonth = document.querySelector('.pop-up__select__list_month')
-                const selectListYear = document.querySelector('.pop-up__select__list_year')
-                const arrowButtonMonth = document.querySelector('.pop-up__select__header__arrow_month')
-                const arrowButtonYear = document.querySelector('.pop-up__select__header__arrow_year')
-                const inputMonth = document.querySelector('.pop-up__select__header__input_month')
-                const inputYear = document.querySelector('.pop-up__select__header__input_year')
-                const topArrowMonth = document.querySelector('.pop-up__select__list__arrow-top_month')
-                const bottomArrowMonth = document.querySelector('.pop-up__select__list__arrow-bottom_month')
-                const topArrowYear = document.querySelector('.pop-up__select__list__arrow-top_year')
-                const bottomArrowYear = document.querySelector('.pop-up__select__list__arrow-bottom_year')
-
-                arrowButtonMonth.addEventListener('click', () => {
-                    selectListMonth.classList.toggle('hidden')
-                    topArrowMonth.classList.toggle('hidden')
-                    bottomArrowMonth.classList.toggle('hidden')
-                })
-
-                arrowButtonYear.addEventListener('click', () => {
-                    selectListYear.classList.toggle('hidden')
-                    topArrowYear.classList.toggle('hidden')
-                    bottomArrowYear.classList.toggle('hidden')
-                })
-
-                for (let child of selectListMonth.children) {
-                    child.addEventListener('click', () => {
-                        inputMonth.textContent = child.textContent
-                        selectListMonth.classList.add('hidden')
-                        topArrowMonth.classList.add('hidden')
-                        bottomArrowMonth.classList.add('hidden')
-                    })
-                }
-
-                for (let child of selectListYear.children) {
-                    child.addEventListener('click', () => {
-                        inputYear.textContent = child.textContent
-                        selectListYear.classList.add('hidden')
-                        topArrowYear.classList.add('hidden')
-                        bottomArrowYear.classList.add('hidden')
-                    })
-                }
-                popUp.addEventListener('click', (event) => {
-                    if (arrowButtonMonth.contains(event.target) || arrowButtonYear.contains(event.target)) return
-                    selectListMonth.classList.add('hidden')
-                    topArrowMonth.classList.add('hidden')
-                    bottomArrowMonth.classList.add('hidden')
-                    selectListYear.classList.add('hidden')
-                    topArrowYear.classList.add('hidden')
-                    bottomArrowYear.classList.add('hidden')
-                })
-            }
-        }
-
-        changText()
-        renderContent()
-        fillPoints()
-        fixInfoText()
-        modalsLogic()
-        body.classList.add('no-scroll')
-        background.style.display = 'block'
-
-        nextButton.addEventListener('click', () => {
-            step += 1
-            backButton.classList.remove('hidden')
-            changText()
-            renderContent()
-            fillPoints()
-            fixInfoText()
-            modalsLogic()
-            if (step === 3) {
-                nextButton.classList.add('hidden')
-                complete.classList.remove('hidden')
-            }
+        arrowButtonFavorite.addEventListener('click', () => {
+          selectListFavorite.classList.toggle('hidden')
+          topArrowFavorite.classList.toggle('hidden')
+          bottomArrowFavorite.classList.toggle('hidden')
         })
 
-        backButton.addEventListener('click', () => {
-            step -= 1
-            nextButton.classList.remove('hidden')
-            complete.classList.add('hidden')
-            changText()
-            renderContent()
-            fillPoints()
-            fixInfoText()
-            modalsLogic()
-            if (step === 1) {
-                backButton.classList.add('hidden')
-            }
+        for (let child of selectListFavorite.children) {
+          child.addEventListener('click', () => {
+            inputFavorite.textContent = child.textContent
+            selectListFavorite.classList.add('hidden')
+            topArrowFavorite.classList.add('hidden')
+            bottomArrowFavorite.classList.add('hidden')
+          })
+        }
+        popUp.addEventListener('click', (event) => {
+          if (arrowButtonFavorite.contains(event.target)) return
+          selectListFavorite.classList.add('hidden')
+          topArrowFavorite.classList.add('hidden')
+          bottomArrowFavorite.classList.add('hidden')
+        })
+      } else if (step === 3) {
+        const selectListMonth = document.querySelector('.pop-up__select__list_month')
+        const selectListYear = document.querySelector('.pop-up__select__list_year')
+        const arrowButtonMonth = document.querySelector('.pop-up__select__header__arrow_month')
+        const arrowButtonYear = document.querySelector('.pop-up__select__header__arrow_year')
+        const inputMonth = document.querySelector('.pop-up__select__header__input_month')
+        const inputYear = document.querySelector('.pop-up__select__header__input_year')
+        const topArrowMonth = document.querySelector('.pop-up__select__list__arrow-top_month')
+        const bottomArrowMonth = document.querySelector('.pop-up__select__list__arrow-bottom_month')
+        const topArrowYear = document.querySelector('.pop-up__select__list__arrow-top_year')
+        const bottomArrowYear = document.querySelector('.pop-up__select__list__arrow-bottom_year')
+
+        arrowButtonMonth.addEventListener('click', () => {
+          selectListMonth.classList.toggle('hidden')
+          topArrowMonth.classList.toggle('hidden')
+          bottomArrowMonth.classList.toggle('hidden')
         })
 
-        complete.addEventListener('click', () => {
-            closePopUp()
-            step = 1
+        arrowButtonYear.addEventListener('click', () => {
+          selectListYear.classList.toggle('hidden')
+          topArrowYear.classList.toggle('hidden')
+          bottomArrowYear.classList.toggle('hidden')
         })
 
-        body.addEventListener('click', function closePopUpListener(event) {
-            if ((popUp.contains(event.target) && !complete.contains(event.target)) || button.contains(event.target)) {
-                return
-            }
+        for (let child of selectListMonth.children) {
+          child.addEventListener('click', () => {
+            inputMonth.textContent = child.textContent
+            selectListMonth.classList.add('hidden')
+            topArrowMonth.classList.add('hidden')
+            bottomArrowMonth.classList.add('hidden')
+          })
+        }
 
-            closePopUp()
-            body.removeEventListener('click', closePopUpListener)
+        for (let child of selectListYear.children) {
+          child.addEventListener('click', () => {
+            inputYear.textContent = child.textContent
+            selectListYear.classList.add('hidden')
+            topArrowYear.classList.add('hidden')
+            bottomArrowYear.classList.add('hidden')
+          })
+        }
+        popUp.addEventListener('click', (event) => {
+          if (arrowButtonMonth.contains(event.target) || arrowButtonYear.contains(event.target)) return
+          selectListMonth.classList.add('hidden')
+          topArrowMonth.classList.add('hidden')
+          bottomArrowMonth.classList.add('hidden')
+          selectListYear.classList.add('hidden')
+          topArrowYear.classList.add('hidden')
+          bottomArrowYear.classList.add('hidden')
         })
+      }
+    }
+
+    changText()
+    renderContent()
+    fillPoints()
+    fixInfoText()
+    modalsLogic()
+    body.classList.add('no-scroll')
+    background.style.display = 'block'
+
+    nextButton.addEventListener('click', () => {
+      step += 1
+      backButton.classList.remove('hidden')
+      changText()
+      renderContent()
+      fillPoints()
+      fixInfoText()
+      modalsLogic()
+      if (step === 3) {
+        nextButton.classList.add('hidden')
+        complete.classList.remove('hidden')
+      }
     })
+
+    backButton.addEventListener('click', () => {
+      step -= 1
+      nextButton.classList.remove('hidden')
+      complete.classList.add('hidden')
+      changText()
+      renderContent()
+      fillPoints()
+      fixInfoText()
+      modalsLogic()
+      if (step === 1) {
+        backButton.classList.add('hidden')
+      }
+    })
+
+    complete.addEventListener('click', () => {
+      closePopUp()
+      step = 1
+    })
+
+    body.addEventListener('click', function closePopUpListener(event) {
+      if ((popUp.contains(event.target) && !complete.contains(event.target)) || button.contains(event.target)) {
+        return
+      }
+
+      closePopUp()
+      body.removeEventListener('click', closePopUpListener)
+    })
+  })
 }

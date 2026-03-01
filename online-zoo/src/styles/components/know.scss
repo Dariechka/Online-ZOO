@@ -12,6 +12,12 @@
       padding: 100px 40px 98px;
       gap: 50px;
     }
+    @include mix.respond(large-1130) {
+      padding: 80px 20px 98px;
+    }
+    @include mix.respond(small-639) {
+      padding: 50px 0 76px;
+    }
   }
   &__info {
     align-self: center;
@@ -30,6 +36,14 @@
       @include mix.respond(large-1800) {
         margin-left: 40px;
       }
+      @include mix.respond(large-1130) {
+        margin-left: -10px;
+      }
+      @include mix.respond(small-639) {
+        margin-left: 0;
+        font-size: 26px;
+        line-height: 32px;
+      }
     }
     &__text {
       @include mix.mainText2();
@@ -39,11 +53,32 @@
       @include mix.respond(large-1800) {
         width: 740px;
       }
+      @include mix.respond(large-1130) {
+        width: 540px;
+      }
+      @include mix.respond(small-639) {
+        width: 280px;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+      }
     }
     @include mix.respond(large-1800) {
       width: 930px;
       padding: 34px 95px 32px;
       margin-bottom: 50px;
+    }
+    @include mix.respond(large-1130) {
+      padding: 30px 20px 48px;
+      margin-bottom: 30px;
+      width: 600px;
+      gap: 32px;
+    }
+    @include mix.respond(small-639) {
+      width: 300px;
+      padding: 30px 10px 45px;
+      gap: 22px;
+      margin-bottom: 0;
     }
   }
   &__info-wrapper {
@@ -54,6 +89,15 @@
     align-self: flex-start;
     @include mix.respond(large-1800) {
       padding-right: 0;
+    }
+    @include mix.respond(large-1130) {
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 80px;
+    }
+    @include mix.respond(small-639) {
+      gap: 50px;
+      padding-left: 10px;
     }
   }
   &__list {
@@ -66,11 +110,27 @@
       display: flex;
       gap: 20px;
       align-items: center;
+      @include mix.respond(small-639) {
+        flex-direction: column;
+        gap: 2px;
+        align-items: flex-start;
+      }
       &:nth-child(2) {
-       margin-top: 7px;
+        margin-top: 7px;
+        @include mix.respond(small-639) {
+          margin-top: 2px;
+        }
       }
       &:nth-child(3) {
         margin-top: 7px;
+        @include mix.respond(small-639) {
+          margin-top: 0;
+        }
+      }
+      &:nth-child(6) {
+        @include mix.respond(small-639) {
+          margin-top: 4px;
+        }
       }
       &_label {
         @include mix.mainText2();
@@ -87,6 +147,10 @@
         @include mix.button(240px, transparent, 10px);
         @include mix.buttonText(vars.$orange);
         font-size: 20.27px;
+        @include mix.respond(small-639) {
+          top: 105%;
+          left: 13%;
+        }
         &_svg {
           color: vars.$orange;
         }
@@ -112,6 +176,14 @@
       width: 456px;
       height: 456px;
     }
+    @include mix.respond(large-1130) {
+      width: 600px;
+      height: 600px;
+    }
+    @include mix.respond(small-639) {
+      width: 320px;
+      height: 320px;
+    }
   }
   &__text {
     width: 100%;
@@ -122,6 +194,14 @@
     @include mix.respond(large-1800) {
       padding-right: 0;
       margin-top: 0;
+    }
+    @include mix.respond(large-1130) {
+      margin-top: 24px;
+    }
+    @include mix.respond(small-639) {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-top: 78px;
     }
   }
 }

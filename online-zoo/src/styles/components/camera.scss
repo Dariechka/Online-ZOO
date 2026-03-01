@@ -8,8 +8,15 @@
     @include mix.center(50px);
     flex-direction: column;
     @include mix.respond(large-1800) {
-     padding: 30px 40px 92px 135px;
+      padding: 30px 40px 92px 135px;
       gap: 10px;
+    }
+    @include mix.respond(large-1130) {
+      padding: 26px 20px 74px 78px;
+    }
+    @include mix.respond(small-639) {
+      padding: 20px 0 46px;
+      gap: 20px;
     }
   }
   &__top {
@@ -18,9 +25,27 @@
     &__title {
       @include mix.title(54px);
       letter-spacing: 0;
+      @include mix.respond(large-1130) {
+        font-weight: 500;
+        font-size: 42px;
+        line-height: 51px;
+        text-align: center;
+      }
+      @include mix.respond(small-639) {
+        margin-right: 10px;
+        font-size: 25px;
+        line-height: 32px;
+        letter-spacing: 0.7px;
+      }
     }
     @include mix.respond(large-1800) {
       gap: 71px;
+    }
+    @include mix.respond(large-1130) {
+      align-self: center;
+    }
+    @include mix.respond(small-639) {
+      align-self: flex-end;
     }
   }
   &__button {
@@ -32,14 +57,8 @@
       height: 56px;
       margin-bottom: 4px;
     }
-    @include mix.respond(medium-850) {
-      align-self: center;
-      width: 290px;
-    }
-    @include mix.respond(small-615) {
-      align-self: center;
-      width: 300px;
-      height: 45px;
+    @include mix.respond(large-1130) {
+      display: none;
     }
     &__text {
       @include mix.buttonText(vars.$white);
@@ -51,13 +70,39 @@
       background: vars.$dark-orange;
       box-shadow: 0 4px 30px rgba(245, 128, 33, 0.3);
     }
+    &_hidden {
+      display: none;
+      @include mix.respond(large-1130) {
+        display: flex;
+        align-self: flex-end;
+        height: 48px;
+        width: 212px;
+        margin-top: 8px;
+        margin-bottom: 14px;
+      }
+      @include mix.respond(small-639) {
+        display: none;
+      }
+      &_hidden {
+        display: none;
+        @include mix.respond(small-639) {
+          display: flex;
+          width: 300px;
+          height: 45px;
+          margin-top: 20px;
+          align-self: center;
+        }
+      }
+    }
   }
   &__main-video {
     margin-bottom: 50px;
     & > iframe {
       width: 1400px;
       height: 787px;
-      background: linear-gradient(180.29deg, rgba(0, 0, 0, 0) 85.76%, #000000 99.75%), linear-gradient(152.16deg, #000000 2.73%, rgba(0, 0, 0, 0) 16.72%);
+      background:
+        linear-gradient(180.29deg, rgba(0, 0, 0, 0) 85.76%, #000000 99.75%),
+        linear-gradient(152.16deg, #000000 2.73%, rgba(0, 0, 0, 0) 16.72%);
     }
     @include mix.respond(large-1800) {
       margin-top: 20px;
@@ -66,6 +111,20 @@
       & > iframe {
         width: 1025px;
         height: 760px;
+      }
+    }
+    @include mix.respond(large-1130) {
+      margin-top: 10px;
+      & > iframe {
+        width: 542px;
+        height: 402px;
+      }
+    }
+    @include mix.respond(small-639) {
+      margin-top: 0;
+      & > iframe {
+        width: 270px;
+        height: 196px;
       }
     }
   }
@@ -82,12 +141,29 @@
       letter-spacing: 0;
       margin: 0;
       text-transform: uppercase;
+      @include mix.respond(large-1130) {
+        align-self: flex-start;
+        font-size: 26px;
+        text-transform: capitalize;
+      }
+      @include mix.respond(small-639) {
+        align-self: center;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+        margin-left: 12px;
+      }
     }
     &__wrapper {
       @include mix.center(13px);
       margin-left: 112px;
       @include mix.respond(large-1800) {
         margin-left: 0;
+      }
+      @include mix.respond(small-639) {
+        overflow: hidden;
+        max-width: 100%;
       }
     }
     &__button {
@@ -103,6 +179,9 @@
         & .camera__slider__button__svg {
           color: vars.$white;
         }
+      }
+      @include mix.respond(large-1130) {
+        display: none;
       }
     }
     &__ribbon {
@@ -121,11 +200,22 @@
         @include mix.respond(large-1800) {
           width: 265px;
         }
+        @include mix.respond(large-1130) {
+          width: 135px;
+          height: 106px;
+        }
+        @include mix.respond(small-639) {
+          width: 140px;
+          height: 110px;
+        }
       }
       &:first-child {
         border: 3px solid vars.$orange;
         & iframe {
           border-radius: 0;
+          @include mix.respond(small-639) {
+            width: 136px;
+          }
         }
       }
     }
@@ -133,14 +223,102 @@
       align-self: flex-end;
       gap: 35px;
     }
+    @include mix.respond(large-1130) {
+      gap: 20px;
+    }
+    @include mix.respond(small-639) {
+      overflow: hidden;
+      max-width: 100%;
+      align-items: flex-start;
+      padding-left: 10px;
+      margin-top: -5px;
+    }
   }
 
   &__donation {
     height: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 55px;
+    padding-bottom: 45px;
+    background-color: vars.$purple;
+    display: flex;
+    justify-content: space-between;
+    & > .donation__donate {
+      margin-top: -5px;
+    }
     @include mix.respond(large-1800) {
-      padding: 30px 40px;
+      padding: 35px 40px 28px;
+      & > .donation__donate {
+        margin-top: -10px;
+      }
+    }
+    @include mix.respond(large-1130) {
+      padding: 49px 20px;
+      flex-direction: column;
+      gap: 30px;
+      justify-content: center;
+      align-items: center;
+      & > .donation__donate {
+        margin-top: 0;
+        align-self: center;
+        padding-top: 0;
+        justify-content: center;
+      }
+    }
+    @include mix.respond(small-639) {
+      padding: 20px 10px 52px;
+      gap: 20px;
+    }
+
+    &__text-info {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      &__title {
+        @include mix.text('Montserrat', 'normal', vars.$white, 42px, 100%, 500, 0);
+        text-transform: uppercase;
+        @include mix.respond(large-1130) {
+          text-align: center;
+          line-height: 130%;
+        }
+        @include mix.respond(small-639) {
+          font-size: 26px;
+          max-width: 300px;
+          line-height: 32px;
+        }
+      }
+      &__text {
+        @include mix.mainText();
+        color: vars.$white;
+        max-width: 873px;
+        @include mix.respond(large-1800) {
+          max-width: 735px;
+        }
+        @include mix.respond(large-1130) {
+          max-width: 599px;
+          text-align: center;
+        }
+        @include mix.respond(small-639) {
+          font-size: 18px;
+          max-width: 300px;
+          line-height: 150%;
+          font-weight: 400;
+        }
+      }
+    }
+    &__button {
+      @include mix.respond(large-1130) {
+        width: 363px;
+      }
+      @include mix.respond(small-639) {
+        width: 300px;
+        height: 45px;
+      }
+    }
+    &__title {
+      @include mix.respond(large-1130) {
+        align-self: center;
+        text-align: center;
+      }
     }
   }
 }
