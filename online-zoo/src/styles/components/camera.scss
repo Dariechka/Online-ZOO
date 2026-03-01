@@ -7,6 +7,10 @@
     padding-bottom: 142px;
     @include mix.center(50px);
     flex-direction: column;
+    @include mix.respond(large-1800) {
+     padding: 30px 40px 92px 135px;
+      gap: 10px;
+    }
   }
   &__top {
     @include mix.center(198px);
@@ -15,13 +19,18 @@
       @include mix.title(54px);
       letter-spacing: 0;
     }
+    @include mix.respond(large-1800) {
+      gap: 71px;
+    }
   }
   &__button {
     align-self: flex-end;
     @include mix.button(240px, vars.$orange, 10px);
     cursor: pointer;
     @include mix.respond(large-1800) {
-      width: 266px;
+      width: 240px;
+      height: 56px;
+      margin-bottom: 4px;
     }
     @include mix.respond(medium-850) {
       align-self: center;
@@ -50,6 +59,15 @@
       height: 787px;
       background: linear-gradient(180.29deg, rgba(0, 0, 0, 0) 85.76%, #000000 99.75%), linear-gradient(152.16deg, #000000 2.73%, rgba(0, 0, 0, 0) 16.72%);
     }
+    @include mix.respond(large-1800) {
+      margin-top: 20px;
+      margin-bottom: 0;
+      align-self: flex-end;
+      & > iframe {
+        width: 1025px;
+        height: 760px;
+      }
+    }
   }
   &__slider {
     @include mix.center(30px);
@@ -68,11 +86,17 @@
     &__wrapper {
       @include mix.center(13px);
       margin-left: 112px;
+      @include mix.respond(large-1800) {
+        margin-left: 0;
+      }
     }
     &__button {
       @include mix.button(80px, transparent, 0);
       &__svg {
         color: vars.$purple;
+      }
+      @include mix.respond(large-1800) {
+        margin-bottom: 18px;
       }
       &:hover {
         background-color: vars.$purple;
@@ -84,6 +108,9 @@
     &__ribbon {
       display: flex;
       gap: 40px;
+      @include mix.respond(large-1800) {
+        gap: 20px;
+      }
     }
     &__video {
       border-radius: vars.$border-radius;
@@ -91,6 +118,9 @@
         width: 320px;
         height: 209px;
         border-radius: vars.$border-radius;
+        @include mix.respond(large-1800) {
+          width: 265px;
+        }
       }
       &:first-child {
         border: 3px solid vars.$orange;
@@ -99,11 +129,18 @@
         }
       }
     }
+    @include mix.respond(large-1800) {
+      align-self: flex-end;
+      gap: 35px;
+    }
   }
 
   &__donation {
-    height: 249px;
+    height: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
+    @include mix.respond(large-1800) {
+      padding: 30px 40px;
+    }
   }
 }

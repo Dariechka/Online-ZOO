@@ -77,6 +77,7 @@
   gap: $gap;
   border: none;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.4s linear;
   @if ($border-color) {
     border: 1px solid $border-color;
@@ -93,6 +94,7 @@
   letter-spacing: 0;
   cursor: pointer;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 @mixin center($gap) {
