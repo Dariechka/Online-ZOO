@@ -29,7 +29,7 @@ export default async function zoos(animalName = 'gorilla') {
   let range = document.querySelector('.range')
   range.textContent = animal.range
   const image = document.querySelector('.know__image__img')
-  image.setAttribute('src', `/images/${animal.animal}_Page.png`)
+  image.setAttribute('src', `./images/${animal.animal}_Page.png`)
   const knowLargeText = document.querySelector('.know__text')
   knowLargeText.textContent = animal.text
   const donationTitle = document.querySelector('.camera__donation__text-info__title')

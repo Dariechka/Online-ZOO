@@ -18,7 +18,7 @@ async function fetchAnimals() {
       (animal) =>
         `<div class="card">
                 <div class="card__image">
-                  <img class="card__image__img" src="/images/${animal.animal}.png" alt="Animal" />
+                  <img class="card__image__img" src="./images/${animal.animal}.png" alt="Animal" />
                 </div>
                 <div class="card__text-block">
                   <div class="card__text-block__top">
