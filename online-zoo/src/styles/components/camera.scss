@@ -1,0 +1,109 @@
+@use './../_variables' as vars;
+@use './../_mixins' as mix;
+
+.camera {
+  &__container {
+    padding-top: 50px;
+    padding-bottom: 142px;
+    @include mix.center(50px);
+    flex-direction: column;
+  }
+  &__top {
+    @include mix.center(198px);
+    align-self: flex-end;
+    &__title {
+      @include mix.title(54px);
+      letter-spacing: 0;
+    }
+  }
+  &__button {
+    align-self: flex-end;
+    @include mix.button(240px, vars.$orange, 10px);
+    cursor: pointer;
+    @include mix.respond(large-1800) {
+      width: 266px;
+    }
+    @include mix.respond(medium-850) {
+      align-self: center;
+      width: 290px;
+    }
+    @include mix.respond(small-615) {
+      align-self: center;
+      width: 300px;
+      height: 45px;
+    }
+    &__text {
+      @include mix.buttonText(vars.$white);
+    }
+    &__svg {
+      color: vars.$white;
+    }
+    &:hover {
+      background: vars.$dark-orange;
+      box-shadow: 0 4px 30px rgba(245, 128, 33, 0.3);
+    }
+  }
+  &__main-video {
+    margin-bottom: 50px;
+    & > iframe {
+      width: 1400px;
+      height: 787px;
+      background: linear-gradient(180.29deg, rgba(0, 0, 0, 0) 85.76%, #000000 99.75%), linear-gradient(152.16deg, #000000 2.73%, rgba(0, 0, 0, 0) 16.72%);
+    }
+  }
+  &__slider {
+    @include mix.center(30px);
+    flex-direction: column;
+    &__title {
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      color: vars.$black;
+      font-size: 42px;
+      line-height: 100%;
+      font-weight: 500;
+      letter-spacing: 0;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    &__wrapper {
+      @include mix.center(13px);
+      margin-left: 112px;
+    }
+    &__button {
+      @include mix.button(80px, transparent, 0);
+      &__svg {
+        color: vars.$purple;
+      }
+      &:hover {
+        background-color: vars.$purple;
+        & .camera__slider__button__svg {
+          color: vars.$white;
+        }
+      }
+    }
+    &__ribbon {
+      display: flex;
+      gap: 40px;
+    }
+    &__video {
+      border-radius: vars.$border-radius;
+      & iframe {
+        width: 320px;
+        height: 209px;
+        border-radius: vars.$border-radius;
+      }
+      &:first-child {
+        border: 3px solid vars.$orange;
+        & iframe {
+          border-radius: 0;
+        }
+      }
+    }
+  }
+
+  &__donation {
+    height: 249px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}

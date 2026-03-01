@@ -230,7 +230,6 @@
     align-self: flex-end;
     margin-right: 440px;
     margin-top: -50px;
-    @include mix.button(249px, vars.$orange, 10px);
     @include mix.button(240px, vars.$orange, 10px);
     @include mix.respond(large-1800) {
       margin-top: 40px;
