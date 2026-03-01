@@ -5,5 +5,13 @@ export default defineConfig({
   build: {
     minify: false,
     sourcemap: 'inline',
+    rollupOptions: {
+      input: {
+        main: './index.html',
+        map: './map.html',
+        contact: './contact.html',
+        zoos: './zoos.html',
+      },
+    },
   },
 })
