@@ -25,15 +25,15 @@ const popUpData = [
               <div class="pop-up__select__header__input pop-up__select__header__input_favorite">Choose your favourite</div>
               <div class="pop-up__select__header__arrow pop-up__select__header__arrow_favorite">
                 <svg width="17" height="10" viewBox="0 0 17 10">
-                  <use href="/icon.svg#arrow-bottom"></use>
+                  <use href="./icon.svg#arrow-bottom"></use>
                 </svg>
               </div>
             </div>
             <svg width="17" height="10" viewBox="0 0 17 10" class="pop-up__select__list__arrow-top pop-up__select__list__arrow-top_favorite hidden">
-              <use href="/icon.svg#arrow-top"></use>
+              <use href="./icon.svg#arrow-top"></use>
             </svg>
             <svg width="17" height="10" viewBox="0 0 17 10" class="pop-up__select__list__arrow-bottom pop-up__select__list__arrow-bottom_favorite hidden">
-              <use href="/icon.svg#arrow-bottom"></use>
+              <use href="./icon.svg#arrow-bottom"></use>
             </svg>
             <ul class="pop-up__select__list pop-up__select__list_favorite hidden">
               <li>Lukas the Panda</li>
@@ -127,10 +127,10 @@ const popUpData = [
                 </div>
               </div>
               <svg width="17" height="10" viewBox="0 0 17 10" class="pop-up__select__list__arrow-top pop-up__select__list__arrow-top_month hidden">
-                <use href="/icon.svg#arrow-top"></use>
+                <use href="./icon.svg#arrow-top"></use>
               </svg>
               <svg width="17" height="10" viewBox="0 0 17 10" class="pop-up__select__list__arrow-bottom pop-up__select__list__arrow-bottom_month hidden">
-                <use href="/icon.svg#arrow-bottom"></use>
+                <use href="./icon.svg#arrow-bottom"></use>
               </svg>
               <ul class="pop-up__select__list pop-up__select__list_month hidden">
                 <li>January</li>
@@ -154,15 +154,15 @@ const popUpData = [
                 <div class="pop-up__select__header__input pop-up__select__header__input_year">Year</div>
                 <div class="pop-up__select__header__arrow pop-up__select__header__arrow_year">
                   <svg width="17" height="10" viewBox="0 0 17 10">
-                    <use href="/icon.svg#arrow-bottom"></use>
+                    <use href="./icon.svg#arrow-bottom"></use>
                   </svg>
                 </div>
               </div>
               <svg width="17" height="10" viewBox="0 0 17 10" class="pop-up__select__list__arrow-top pop-up__select__list__arrow-top_year hidden">
-                <use href="/icon.svg#arrow-top"></use>
+                <use href="./icon.svg#arrow-top"></use>
               </svg>
               <svg width="17" height="10" viewBox="0 0 17 10" class="pop-up__select__list__arrow-bottom pop-up__select__list__arrow-bottom_year hidden">
-                <use href="/icon.svg#arrow-bottom"></use>
+                <use href="./icon.svg#arrow-bottom"></use>
               </svg>
               <ul class="pop-up__select__list pop-up__select__list_year hidden">
                 <li>2026</li>
