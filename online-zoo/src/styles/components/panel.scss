@@ -25,6 +25,15 @@
   position: sticky;
   top: 0;
   z-index: 5;
+  transition: all 0.5s linear;
+  &[panel-open="true"] {
+    transform: translateX(0);
+    width: 300px;
+  }
+  &[panel-open="false"] {
+    transform: translateX(-0);
+    width: 220px;
+  }
   @include mix.respond(large-1500) {
     width: 115px;
   }
@@ -87,6 +96,7 @@
   }
   &__svg {
     cursor: pointer;
+    transition: all 0.5s linear;
   }
 
   &__animal {
@@ -248,5 +258,23 @@
 .active > .panel__animal__circle svg {
   @include mix.respond(large-1500) {
     color: vars.$white;
+  }
+}
+
+.close-button {
+  &[panel-open="true"] {
+    display: flex;
+  }
+  &[panel-open="false"] {
+    display: none;
+  }
+}
+
+.open-button {
+  &[panel-open="true"] {
+    display: none;
+  }
+  &[panel-open="false"] {
+    display: flex;
   }
 }

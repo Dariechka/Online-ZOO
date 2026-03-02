@@ -47,7 +47,7 @@
       padding-top: 796px;
       transform: translateX(0);
       transition: transform 0.4s linear;
-      &[data-open] {
+      &[data-open="true"] {
         transform: translateX(-100vw);
       }
     }

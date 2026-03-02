@@ -37,7 +37,8 @@ export default async function zoos(animalName = 'gorilla') {
   const donationText = document.querySelector('.camera__donation__text-info__text')
   donationText.textContent = animal.donationText
 
-  const panel = document.querySelector('.panel__top')
+  const panel = document.querySelector('.panel')
+  const topPanelElement = document.querySelector('.panel__top')
   const bottomButton = document.querySelector('.panel__bottom')
   let step = 0
   const animalsForPanel = allAnimals
@@ -54,7 +55,7 @@ export default async function zoos(animalName = 'gorilla') {
       child.remove()
     }
     const circlesHtml = animalsForPanel.slice(step, step + 4)
-    panel.insertAdjacentHTML('afterend', circlesHtml.join(''))
+    topPanelElement.insertAdjacentHTML('afterend', circlesHtml.join(''))
 
     step += 4
     if (step > 4) {
@@ -69,6 +70,20 @@ export default async function zoos(animalName = 'gorilla') {
 
   renderPanel()
   bottomButton.addEventListener('click', renderPanel)
+
+
+  const openButton = document.querySelector('.open-button')
+  const closeButton = document.querySelector('.close-button')
+  openButton.addEventListener('click', () => {
+    panel.setAttribute('panel-open', 'true');
+    openButton.setAttribute('panel-open', 'true');
+    closeButton.setAttribute('panel-open', 'true');
+  })
+  closeButton.addEventListener('click', () => {
+    panel.setAttribute('panel-open', 'false');
+    openButton.setAttribute('panel-open', 'false');
+    closeButton.setAttribute('panel-open', 'false');
+  })
 }
 
 function transformAnimalForPanel(animal, active = false) {
