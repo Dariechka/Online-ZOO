@@ -122,7 +122,7 @@ const popUpData = [
                 <div class="pop-up__select__header__input pop-up__select__header__input_month">Month</div>
                 <div class="pop-up__select__header__arrow pop-up__select__header__arrow_month">
                   <svg width="17" height="10" viewBox="0 0 17 10">
-                    <use href="/icon.svg#arrow-bottom"></use>
+                    <use href="./icon.svg#arrow-bottom"></use>
                   </svg>
                 </div>
               </div>
