@@ -36,4 +36,43 @@ export default async function zoos(animalName = 'gorilla') {
   donationTitle.textContent = animal.donationTitle
   const donationText = document.querySelector('.camera__donation__text-info__text')
   donationText.textContent = animal.donationText
+
+  const panel = document.querySelector('.panel__top')
+  const bottomButton = document.querySelector('.panel__bottom')
+  let step = 0
+  const animalsForPanel = allAnimals
+    .sort((b, c) => {
+      if (b.animal === animal.animal) return -1
+      if (c.animal === animal.animal) return 1
+      return 0
+    })
+    .map((animalPanel) => transformAnimalForPanel(animalPanel, animalPanel.animal === animal.animal))
+
+  function renderPanel() {
+    const children = document.querySelectorAll('.panel__animal')
+    for (let child of children) {
+      child.remove()
+    }
+    const circlesHtml = animalsForPanel.slice(step, step + 4)
+    panel.insertAdjacentHTML('afterend', circlesHtml.join(''))
+
+    step += 4
+    if (step > 4) {
+      step = 0
+    }
+    const circles = document.querySelectorAll('.panel__animal__circle')
+    for (let circle of circles) {
+      let classes = Array.from(circle.classList)
+      circle.addEventListener('click', () => zoos(classes[1]))
+    }
+  }
+
+  renderPanel()
+  bottomButton.addEventListener('click', renderPanel)
+}
+
+function transformAnimalForPanel(animal, active = false) {
+  return active
+    ? `<div class="panel__animal active"><svg width="120" height="120" viewBox="0 0 120 120" class="panel__animal__border"><use href="./icon.svg#circle"></use></svg><div class="panel__animal__circle ${animal.animal}">${animal.svg}</div></div>`
+    : `<div class="panel__animal"><svg width="120" height="120" viewBox="0 0 120 120" class="panel__animal__border"><use href="./icon.svg#circle"></use></svg><div class="panel__animal__circle ${animal.animal}">${animal.svg}</div></div>`
 }

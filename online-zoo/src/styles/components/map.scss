@@ -254,6 +254,7 @@
     &_alligator {
       width: 57.76px;
       height: 46.7px;
+      color: vars.$purple;
       @include mix.animal();
       @include mix.respond(large-1199) {
         width: 24.26px;
@@ -268,6 +269,7 @@
     &_lion {
       width: 53px;
       height: 47px;
+      color: vars.$purple;
       @include mix.animal();
       @include mix.respond(large-1199) {
         width: 21.86px;
@@ -282,6 +284,7 @@
     &_gorilla {
       width: 55px;
       height: 47px;
+      color: vars.$purple;
       @include mix.animal();
       @include mix.respond(large-1199) {
         width: 23.04px;
@@ -296,6 +299,7 @@
     &_lemur {
       width: 35px;
       height: 56px;
+      color: vars.$purple;
       @include mix.animal();
       left: 25%;
       @include mix.respond(large-1199) {
@@ -311,6 +315,7 @@
     &_panda {
       width: 59px;
       height: 44px;
+      color: vars.$purple;
       @include mix.animal();
       @include mix.respond(large-1199) {
         width: 24.74px;
@@ -325,6 +330,7 @@
     &_tiger {
       width: 63px;
       height: 53px;
+      color: vars.$purple;
       @include mix.animal();
       @include mix.respond(large-1199) {
         width: 25.03px;
@@ -339,6 +345,7 @@
     &_koala {
       width: 43px;
       height: 54px;
+      color: vars.$purple;
       @include mix.animal();
       left: 20%;
       @include mix.respond(large-1199) {
@@ -357,6 +364,7 @@
       position: absolute;
       left: 20%;
       top: 14%;
+      color: vars.$purple;
       @include mix.respond(large-1199) {
         width: 22.15px;
         height: 22.05px;

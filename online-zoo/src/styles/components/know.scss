@@ -101,7 +101,6 @@
     }
   }
   &__list {
-    position: relative;
     display: flex;
     flex-direction: column;
     align-self: flex-start;
@@ -132,6 +131,9 @@
           margin-top: 4px;
         }
       }
+      &:last-child {
+        position: relative;
+      }
       &_label {
         @include mix.mainText2();
         color: vars.$black;
@@ -141,14 +143,12 @@
       }
       &_link {
         position: absolute;
-        top: 86%;
-        left: 53%;
+        left: 76%;
         text-decoration: none;
         @include mix.button(240px, transparent, 10px);
         @include mix.buttonText(vars.$orange);
         font-size: 20.27px;
         @include mix.respond(small-639) {
-          top: 105%;
           left: 13%;
         }
         &_svg {

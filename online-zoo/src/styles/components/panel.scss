@@ -10,7 +10,13 @@
 .zoos-main {
   position: relative;
   z-index: 2;
-  top: -337px;
+  top: -850px;
+  @include mix.respond(large-1130) {
+    top: -500px;
+  }
+  @include mix.respond(small-639) {
+    top: -300px;
+  }
 }
 
 .panel {
@@ -19,6 +25,15 @@
   position: sticky;
   top: 0;
   z-index: 5;
+  @include mix.respond(large-1500) {
+    width: 115px;
+  }
+  @include mix.respond(large-1130) {
+    width: 78px;
+  }
+  @include mix.respond(small-639) {
+    width: 50px;
+  }
 
   &__bage {
     position: absolute;
@@ -39,6 +54,9 @@
       text-transform: uppercase;
       color: vars.$white;
     }
+    @include mix.respond(large-1500) {
+      display: none;
+    }
   }
 
   &__top {
@@ -49,11 +67,23 @@
     justify-content: flex-end;
     border-bottom: 1px solid vars.$white;
     position: relative;
+    @include mix.respond(large-1500) {
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+    }
+    @include mix.respond(large-1130) {
+      height: 50px;
+    }
   }
   &__bottom {
     @include mix.center(0);
     height: 86px;
     justify-content: center;
+    cursor: pointer;
+    @include mix.respond(large-1130) {
+      height: 50px;
+    }
   }
   &__svg {
     cursor: pointer;
@@ -65,21 +95,158 @@
     position: relative;
     @include mix.center(0);
     justify-content: center;
+    @include mix.respond(large-1130) {
+      height: 100px;
+    }
+    @include mix.respond(small-639) {
+      height: 50px;
+    }
     &__circle {
+      cursor: pointer;
       width: 104px;
       height: 104px;
       border-radius: 50%;
-      background-color: vars.$white;
-      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
       @include mix.center(0);
       justify-content: center;
+      background: vars.$orange;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+      @include mix.respond(large-1500) {
+        background-color: vars.$purple;
+        width: 100px;
+        height: 100px;
+      }
+      @include mix.respond(large-1130) {
+        height: 50px;
+        width: 50px;
+      }
+      @include mix.respond(small-639) {
+        height: 25px;
+        width: 25px;
+      }
     }
     &__panda {
-      width: 80px;
+      width: 84px;
+      height: 65px;
+      color: vars.$purple;
+      @include mix.respond(large-1500) {
+        color: vars.$orange;
+      }
+      @include mix.respond(large-1130) {
+        width: 40px;
+        height: 30px;
+      }
+    }
+    &__eagles {
+      width: 66px;
+      height: 62px;
+      color: vars.$purple;
+      @include mix.respond(large-1500) {
+        color: vars.$orange;
+      }
+      @include mix.respond(large-1130) {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    &__gorilla {
+      width: 68px;
       height: 60px;
+      color: vars.$purple;
+      @include mix.respond(large-1500) {
+        color: vars.$orange;
+      }
+      @include mix.respond(large-1130) {
+        width: 34px;
+        height: 30px;
+      }
+    }
+    &__lemur {
+      width: 35px;
+      height: 56px;
+      color: vars.$purple;
+      @include mix.respond(large-1500) {
+        color: vars.$orange;
+      }
+      @include mix.respond(large-1130) {
+        width: 25px;
+        height: 35px;
+      }
+    }
+    &__koala {
+      width: 68px;
+      height: 66px;
+      color: vars.$purple;
+      @include mix.respond(large-1500) {
+        color: vars.$orange;
+      }
+      @include mix.respond(large-1130) {
+        width: 45px;
+        height: 40px;
+      }
+    }
+    &__lion {
+      width: 68px;
+      height: 60px;
+      color: vars.$purple;
+      @include mix.respond(large-1500) {
+        color: vars.$orange;
+      }
+      @include mix.respond(large-1130) {
+        width: 40px;
+        height: 30px;
+      }
+    }
+    &__alligator {
+      width: 66px;
+      height: 68px;
+      color: vars.$purple;
+      @include mix.respond(large-1500) {
+        color: vars.$orange;
+      }
+      @include mix.respond(large-1130) {
+        width: 45px;
+        height: 35px;
+      }
+    }
+    &__tiger {
+      width: 68px;
+      height: 64px;
+      color: vars.$purple;
+      @include mix.respond(large-1500) {
+        color: vars.$orange;
+      }
+      @include mix.respond(large-1130) {
+        width: 44px;
+        height: 35px;
+      }
     }
     &__border {
+      display: none;
       position: absolute;
     }
+  }
+}
+
+.active {
+  cursor: pointer;
+}
+.active > .panel__animal__border {
+  display: flex;
+  @include mix.respond(large-1500) {
+    display: none;
+  }
+}
+
+.active > .panel__animal__circle {
+  background-color: vars.$white;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  @include mix.respond(large-1500) {
+    background-color: vars.$purple;
+  }
+}
+
+.active > .panel__animal__circle svg {
+  @include mix.respond(large-1500) {
+    color: vars.$white;
   }
 }
