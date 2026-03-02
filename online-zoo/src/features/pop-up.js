@@ -69,7 +69,7 @@ const popUpData = [
               pattern="^[A-Za-z]*[A-Za-z ]*[A-Za-z]$"
               placeholder="First and last name"
               class="pop-up__input pop-up__input_second"
-          />
+          >
           <span class="pop-up__error">Invalid name</span>
         </label>
         <label class="pop-up__label">
@@ -80,7 +80,7 @@ const popUpData = [
               autocomplete="email"
               placeholder="Enter your email"
               class="pop-up__input pop-up__input_second"
-          />
+          >
           <span class="pop-up__error pop-up__error_email">Invalid email</span>
           <span class="pop-up__label_text pop-up__label_text_note">You will receive emails from the Online Zoo, including updates and news on the latest discoveries and translations. You can unsubscribe at any time.</span>
         </label>
@@ -99,7 +99,7 @@ const popUpData = [
                 pattern="^\\d+$"
                 autocomplete="none"
                 class="pop-up__input pop-up__input_card"
-            />
+            >
             <span class="pop-up__error">Invalid card number</span>
           </label>
           <label class="pop-up__label">
@@ -110,7 +110,7 @@ const popUpData = [
                 autocomplete="none"
                 pattern="^\\d{3,4}$"
                 class="pop-up__input pop-up__input_cvv"
-            />
+            >
             <span class="pop-up__error">Invalid CVV</span>
           </label>
         </div>
@@ -119,9 +119,6 @@ const popUpData = [
             <p class="pop-up__label_text"><span class="pop-up__label_text_asterix">*</span> Expiration Date</p>
             <div class="pop-up__select">
               <div class="pop-up__select__header">
-              
-              
-              
                 <div class="pop-up__select__header__input pop-up__select__header__input_month">Month</div>
                 <div class="pop-up__select__header__arrow pop-up__select__header__arrow_month">
                   <svg width="17" height="10" viewBox="0 0 17 10">

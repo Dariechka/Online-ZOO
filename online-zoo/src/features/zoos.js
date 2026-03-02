@@ -77,26 +77,27 @@ export default async function zoos(animalName = 'gorilla') {
     closePanel()
   })
 
-
   const openButton = document.querySelector('.open-button')
   const closeButton = document.querySelector('.close-button')
+  const bage = document.querySelector('.panel__bage')
   openButton.addEventListener('click', () => {
-    panel.setAttribute('panel-open', 'true');
-    openButton.setAttribute('panel-open', 'true');
-    closeButton.setAttribute('panel-open', 'true');
-    for (const animal of document.querySelectorAll('.panel__animal')){
-      animal.setAttribute('panel-open', 'true');
+    panel.setAttribute('panel-open', 'true')
+    openButton.setAttribute('panel-open', 'true')
+    closeButton.setAttribute('panel-open', 'true')
+    bage.setAttribute('panel-open', 'true')
+    for (const animal of document.querySelectorAll('.panel__animal')) {
+      animal.setAttribute('panel-open', 'true')
     }
   })
   closeButton.addEventListener('click', () => closePanel())
 
-
   function closePanel() {
-    panel.removeAttribute('panel-open');
-    openButton.removeAttribute('panel-open');
-    closeButton.removeAttribute('panel-open');
-    for (const animal of document.querySelectorAll('.panel__animal')){
-      animal.removeAttribute('panel-open');
+    panel.removeAttribute('panel-open')
+    openButton.removeAttribute('panel-open')
+    closeButton.removeAttribute('panel-open')
+    bage.removeAttribute('panel-open')
+    for (const animal of document.querySelectorAll('.panel__animal')) {
+      animal.removeAttribute('panel-open')
     }
   }
 }

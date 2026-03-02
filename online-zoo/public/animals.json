@@ -117,7 +117,7 @@
     "donationTitle": "Help Protect the King of the Jungle!",
     "donationText": "Lions are an iconic species, but their populations are declining due to habitat loss and poaching. By donating, you’ll directly support the protection of lions in the wild, help provide food, and ensure their survival for future generations.",
     "svg": "<svg viewBox=\"0 0 68 60\" class=\"panel__animal__lion\">\n              <use href=\"./icon.svg#lion\"></use>\n            </svg>",
-    "svgText": "Live from the Lion’s Shake, Watch the Kings of the Jungle cam"
+    "svgText": "Live from the Lion’s Shake, Watch the Kings of the Jungle"
   },
   {
     "animal": "alligator",
