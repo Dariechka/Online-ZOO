@@ -3432,6 +3432,7 @@ summary {
 .map__drop_alligator {
   width: 57.76px;
   height: 46.7px;
+  color: #20113d;
   position: absolute;
   top: 14%;
   left: 12%;
@@ -3452,6 +3453,7 @@ summary {
 .map__drop_lion {
   width: 53px;
   height: 47px;
+  color: #20113d;
   position: absolute;
   top: 14%;
   left: 12%;
@@ -3472,6 +3474,7 @@ summary {
 .map__drop_gorilla {
   width: 55px;
   height: 47px;
+  color: #20113d;
   position: absolute;
   top: 14%;
   left: 12%;
@@ -3492,6 +3495,7 @@ summary {
 .map__drop_lemur {
   width: 35px;
   height: 56px;
+  color: #20113d;
   position: absolute;
   top: 14%;
   left: 12%;
@@ -3513,6 +3517,7 @@ summary {
 .map__drop_panda {
   width: 59px;
   height: 44px;
+  color: #20113d;
   position: absolute;
   top: 14%;
   left: 12%;
@@ -3533,6 +3538,7 @@ summary {
 .map__drop_tiger {
   width: 63px;
   height: 53px;
+  color: #20113d;
   position: absolute;
   top: 14%;
   left: 12%;
@@ -3553,6 +3559,7 @@ summary {
 .map__drop_koala {
   width: 43px;
   height: 54px;
+  color: #20113d;
   position: absolute;
   top: 14%;
   left: 12%;
@@ -3577,6 +3584,7 @@ summary {
   position: absolute;
   left: 20%;
   top: 14%;
+  color: #20113d;
 }
 @media only screen and (max-width: 1199px) {
   .map__drop_eagles {
@@ -5947,7 +5955,6 @@ summary {
   }
 }
 .know__list {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-self: flex-start;
@@ -5986,6 +5993,9 @@ summary {
     margin-top: 4px;
   }
 }
+.know__list__item:last-child {
+  position: relative;
+}
 .know__list__item_label {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -6009,8 +6019,7 @@ summary {
 }
 .know__list__item_link {
   position: absolute;
-  top: 86%;
-  left: 53%;
+  left: 76%;
   text-decoration: none;
   width: 240px;
   border-radius: 5px;
@@ -6038,7 +6047,6 @@ summary {
 }
 @media only screen and (max-width: 639px) {
   .know__list__item_link {
-    top: 105%;
     left: 13%;
   }
 }
@@ -6123,7 +6131,17 @@ summary {
 .zoos-main {
   position: relative;
   z-index: 2;
-  top: -337px;
+  top: -850px;
+}
+@media only screen and (max-width: 1130px) {
+  .zoos-main {
+    top: -500px;
+  }
+}
+@media only screen and (max-width: 639px) {
+  .zoos-main {
+    top: -300px;
+  }
 }
 
 .panel {
@@ -6132,6 +6150,21 @@ summary {
   position: sticky;
   top: 0;
   z-index: 5;
+}
+@media only screen and (max-width: 1500px) {
+  .panel {
+    width: 115px;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .panel {
+    width: 78px;
+  }
+}
+@media only screen and (max-width: 639px) {
+  .panel {
+    width: 50px;
+  }
 }
 .panel__bage {
   position: absolute;
@@ -6153,6 +6186,11 @@ summary {
   text-transform: uppercase;
   color: #ffffff;
 }
+@media only screen and (max-width: 1500px) {
+  .panel__bage {
+    display: none;
+  }
+}
 .panel__top {
   height: 80px;
   padding-top: 30px;
@@ -6162,12 +6200,30 @@ summary {
   border-bottom: 1px solid #ffffff;
   position: relative;
 }
+@media only screen and (max-width: 1500px) {
+  .panel__top {
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .panel__top {
+    height: 50px;
+  }
+}
 .panel__bottom {
   display: flex;
   gap: 0;
   align-items: center;
   height: 86px;
   justify-content: center;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1130px) {
+  .panel__bottom {
+    height: 50px;
+  }
 }
 .panel__svg {
   cursor: pointer;
@@ -6181,23 +6237,207 @@ summary {
   align-items: center;
   justify-content: center;
 }
+@media only screen and (max-width: 1130px) {
+  .panel__animal {
+    height: 100px;
+  }
+}
+@media only screen and (max-width: 639px) {
+  .panel__animal {
+    height: 50px;
+  }
+}
 .panel__animal__circle {
+  cursor: pointer;
   width: 104px;
   height: 104px;
   border-radius: 50%;
-  background-color: #ffffff;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   gap: 0;
   align-items: center;
   justify-content: center;
+  background: #f58021;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media only screen and (max-width: 1500px) {
+  .panel__animal__circle {
+    background-color: #20113d;
+    width: 100px;
+    height: 100px;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .panel__animal__circle {
+    height: 50px;
+    width: 50px;
+  }
+}
+@media only screen and (max-width: 639px) {
+  .panel__animal__circle {
+    height: 25px;
+    width: 25px;
+  }
 }
 .panel__animal__panda {
-  width: 80px;
+  width: 84px;
+  height: 65px;
+  color: #20113d;
+}
+@media only screen and (max-width: 1500px) {
+  .panel__animal__panda {
+    color: #f58021;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .panel__animal__panda {
+    width: 40px;
+    height: 30px;
+  }
+}
+.panel__animal__eagles {
+  width: 66px;
+  height: 62px;
+  color: #20113d;
+}
+@media only screen and (max-width: 1500px) {
+  .panel__animal__eagles {
+    color: #f58021;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .panel__animal__eagles {
+    width: 40px;
+    height: 40px;
+  }
+}
+.panel__animal__gorilla {
+  width: 68px;
   height: 60px;
+  color: #20113d;
+}
+@media only screen and (max-width: 1500px) {
+  .panel__animal__gorilla {
+    color: #f58021;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .panel__animal__gorilla {
+    width: 34px;
+    height: 30px;
+  }
+}
+.panel__animal__lemur {
+  width: 35px;
+  height: 56px;
+  color: #20113d;
+}
+@media only screen and (max-width: 1500px) {
+  .panel__animal__lemur {
+    color: #f58021;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .panel__animal__lemur {
+    width: 25px;
+    height: 35px;
+  }
+}
+.panel__animal__koala {
+  width: 68px;
+  height: 66px;
+  color: #20113d;
+}
+@media only screen and (max-width: 1500px) {
+  .panel__animal__koala {
+    color: #f58021;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .panel__animal__koala {
+    width: 45px;
+    height: 40px;
+  }
+}
+.panel__animal__lion {
+  width: 68px;
+  height: 60px;
+  color: #20113d;
+}
+@media only screen and (max-width: 1500px) {
+  .panel__animal__lion {
+    color: #f58021;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .panel__animal__lion {
+    width: 40px;
+    height: 30px;
+  }
+}
+.panel__animal__alligator {
+  width: 66px;
+  height: 68px;
+  color: #20113d;
+}
+@media only screen and (max-width: 1500px) {
+  .panel__animal__alligator {
+    color: #f58021;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .panel__animal__alligator {
+    width: 45px;
+    height: 35px;
+  }
+}
+.panel__animal__tiger {
+  width: 68px;
+  height: 64px;
+  color: #20113d;
+}
+@media only screen and (max-width: 1500px) {
+  .panel__animal__tiger {
+    color: #f58021;
+  }
+}
+@media only screen and (max-width: 1130px) {
+  .panel__animal__tiger {
+    width: 44px;
+    height: 35px;
+  }
 }
 .panel__animal__border {
+  display: none;
   position: absolute;
+}
+
+.active {
+  cursor: pointer;
+}
+
+.active > .panel__animal__border {
+  display: flex;
+}
+@media only screen and (max-width: 1500px) {
+  .active > .panel__animal__border {
+    display: none;
+  }
+}
+
+.active > .panel__animal__circle {
+  background-color: #ffffff;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media only screen and (max-width: 1500px) {
+  .active > .panel__animal__circle {
+    background-color: #20113d;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .active > .panel__animal__circle svg {
+    color: #ffffff;
+  }
 }
 
 *,

@@ -1,5 +1,0 @@
-import "./modal-B3RjeGQV.js";
-import { z as zoos } from "./zoos-D639KSB3.js";
-const params = new URLSearchParams(window.location.search);
-zoos(params.get("animal"));
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiem9vcy1DTTRaeFN2Xy5qcyIsInNvdXJjZXMiOlsiLi4vLi4vem9vcy5odG1sP2h0bWwtcHJveHkmaW5kZXg9NS5qcyJdLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgIGltcG9ydCB6b29zIGZyb20gJy9zcmMvZmVhdHVyZXMvem9vcy5qcydcbiAgICAgIGNvbnN0IHBhcmFtcyA9IG5ldyBVUkxTZWFyY2hQYXJhbXMod2luZG93LmxvY2F0aW9uLnNlYXJjaClcbiAgICAgIHpvb3MocGFyYW1zLmdldCgnYW5pbWFsJykpXG4gICAgIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBRU0sTUFBTSxTQUFTLElBQUksZ0JBQWdCLE9BQU8sU0FBUyxNQUFNO0FBQ3pELEtBQUssT0FBTyxJQUFJLFFBQVEsQ0FBQzsifQ==
