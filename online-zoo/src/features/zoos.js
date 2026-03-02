@@ -78,16 +78,30 @@ export default async function zoos(animalName = 'gorilla') {
     panel.setAttribute('panel-open', 'true');
     openButton.setAttribute('panel-open', 'true');
     closeButton.setAttribute('panel-open', 'true');
+    for (const animal of document.querySelectorAll('.panel__animal')){
+      animal.setAttribute('panel-open', 'true');
+    }
   })
   closeButton.addEventListener('click', () => {
-    panel.setAttribute('panel-open', 'false');
-    openButton.setAttribute('panel-open', 'false');
-    closeButton.setAttribute('panel-open', 'false');
+    panel.removeAttribute('panel-open');
+    openButton.removeAttribute('panel-open');
+    closeButton.removeAttribute('panel-open');
+    for (const animal of document.querySelectorAll('.panel__animal')){
+      animal.removeAttribute('panel-open');
+    }
   })
 }
 
 function transformAnimalForPanel(animal, active = false) {
   return active
-    ? `<div class="panel__animal active"><svg width="120" height="120" viewBox="0 0 120 120" class="panel__animal__border"><use href="./icon.svg#circle"></use></svg><div class="panel__animal__circle ${animal.animal}">${animal.svg}</div></div>`
-    : `<div class="panel__animal"><svg width="120" height="120" viewBox="0 0 120 120" class="panel__animal__border"><use href="./icon.svg#circle"></use></svg><div class="panel__animal__circle ${animal.animal}">${animal.svg}</div></div>`
+    ? `<div class="panel__animal active">
+<svg width="120" height="120" viewBox="0 0 120 120" class="panel__animal__border">
+<use href="./icon.svg#circle"></use>
+</svg>
+<div class="panel__animal__circle ${animal.animal}">
+${animal.svg}
+</div>
+<p class="panel__animal__text">${animal.svgText}</p>
+</div>`
+    : `<div class="panel__animal"><svg width="120" height="120" viewBox="0 0 120 120" class="panel__animal__border"><use href="./icon.svg#circle"></use></svg><div class="panel__animal__circle ${animal.animal}">${animal.svg}</div><p class="panel__animal__text">${animal.svgText}</p></div>`
 }

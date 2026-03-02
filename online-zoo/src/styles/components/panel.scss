@@ -118,6 +118,7 @@
       border-radius: 50%;
       @include mix.center(0);
       justify-content: center;
+      transition: all 0.5s linear;
       background: vars.$orange;
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
       @include mix.respond(large-1500) {
@@ -233,6 +234,35 @@
     &__border {
       display: none;
       position: absolute;
+      transition: all 0.5s linear;
+    }
+
+    &__text {
+      @include mix.mainText();
+      line-height: 130%;
+      color: vars.$white;
+      max-width: 169px;
+      display: none;
+      transition: all 0.5s linear;
+    }
+
+    &[panel-open="true"] {
+      gap: 20px;
+      padding-right: 20px;
+      justify-content: flex-start;
+      & .panel__animal__border {
+        display: none;
+      }
+      & .panel__animal__circle {
+        background-color: vars.$purple;
+        box-shadow: none;
+      }
+      & .panel__animal__circle svg {
+        color: vars.$orange;
+      }
+      & .panel__animal__text {
+        display: flex;
+      }
     }
   }
 }
@@ -256,25 +286,26 @@
 }
 
 .active > .panel__animal__circle svg {
+  color: vars.$purple;
   @include mix.respond(large-1500) {
     color: vars.$white;
   }
 }
 
+.active[panel-open="true"] .panel__animal__circle svg {
+  color: vars.$white;
+}
+
 .close-button {
+  display: none;
   &[panel-open="true"] {
     display: flex;
-  }
-  &[panel-open="false"] {
-    display: none;
   }
 }
 
 .open-button {
+  display: flex;
   &[panel-open="true"] {
     display: none;
-  }
-  &[panel-open="false"] {
-    display: flex;
   }
 }
