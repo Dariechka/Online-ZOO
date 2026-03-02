@@ -64,12 +64,18 @@ export default async function zoos(animalName = 'gorilla') {
     const circles = document.querySelectorAll('.panel__animal__circle')
     for (let circle of circles) {
       let classes = Array.from(circle.classList)
-      circle.addEventListener('click', () => zoos(classes[1]))
+      circle.addEventListener('click', () => {
+        zoos(classes[1])
+        closePanel()
+      })
     }
   }
 
   renderPanel()
-  bottomButton.addEventListener('click', renderPanel)
+  bottomButton.addEventListener('click', () => {
+    renderPanel()
+    closePanel()
+  })
 
 
   const openButton = document.querySelector('.open-button')
@@ -82,26 +88,21 @@ export default async function zoos(animalName = 'gorilla') {
       animal.setAttribute('panel-open', 'true');
     }
   })
-  closeButton.addEventListener('click', () => {
+  closeButton.addEventListener('click', () => closePanel())
+
+
+  function closePanel() {
     panel.removeAttribute('panel-open');
     openButton.removeAttribute('panel-open');
     closeButton.removeAttribute('panel-open');
     for (const animal of document.querySelectorAll('.panel__animal')){
       animal.removeAttribute('panel-open');
     }
-  })
+  }
 }
 
 function transformAnimalForPanel(animal, active = false) {
   return active
-    ? `<div class="panel__animal active">
-<svg width="120" height="120" viewBox="0 0 120 120" class="panel__animal__border">
-<use href="./icon.svg#circle"></use>
-</svg>
-<div class="panel__animal__circle ${animal.animal}">
-${animal.svg}
-</div>
-<p class="panel__animal__text">${animal.svgText}</p>
-</div>`
+    ? `<div class="panel__animal active"><svg width="120" height="120" viewBox="0 0 120 120" class="panel__animal__border"><use href="./icon.svg#circle"></use></svg><div class="panel__animal__circle ${animal.animal}">${animal.svg}</div><p class="panel__animal__text">${animal.svgText}</p></div>`
     : `<div class="panel__animal"><svg width="120" height="120" viewBox="0 0 120 120" class="panel__animal__border"><use href="./icon.svg#circle"></use></svg><div class="panel__animal__circle ${animal.animal}">${animal.svg}</div><p class="panel__animal__text">${animal.svgText}</p></div>`
 }
