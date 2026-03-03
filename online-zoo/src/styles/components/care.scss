@@ -163,12 +163,18 @@
       }
     }
     &__card {
+      text-decoration: none;
+      cursor: pointer;
       width: 440px;
       height: 658px;
       display: flex;
       flex-direction: column;
       background-color: vars.$purple;
       border-radius: vars.$border-radius;
+      transition: 0.5s ease-out;
+      &:hover {
+        transform: translateY(-10px);
+      }
       @include mix.respond(large-1500) {
         width: 455px;
         height: 639px;
